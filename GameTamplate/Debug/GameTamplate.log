@@ -1,0 +1,23 @@
+﻿  Source.cpp
+C:\Users\sofija\Desktop\Fakultet\Nastavni plan\CS232\CS232-V05\GameTamplate\Sprite.h(98,21): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\sofija\Desktop\Fakultet\Nastavni plan\CS232\CS232-V05\GameTamplate\Sprite.h(99,21): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\sofija\Desktop\Fakultet\Nastavni plan\CS232\CS232-V05\GameTamplate\Input.h(45,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\sofija\Desktop\Fakultet\Nastavni plan\CS232\CS232-V05\GameTamplate\Input.h(46,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\sofija\Desktop\Fakultet\Nastavni plan\CS232\CS232-V05\GameTamplate\Source.cpp(67,63): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  GameTamplate.vcxproj -> C:\Users\sofija\Desktop\Fakultet\Nastavni plan\CS232\CS232-V05\Debug\GameTamplate.exe
