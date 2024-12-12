@@ -6,67 +6,67 @@
 
 class Input {
 public:
-    static bool is_cursor_locked;
+    static bool _isCursorLocked;
 
 private:
-    static bool key_states[256];
-    static bool key_down_dected[256];
+    static bool _keyStates[256];
+    static bool _keyDownDected[256];
 
-    static glm::vec3 mouse_position;
+    static glm::vec3 _mousePosition;
 
-    static glm::vec3 last_position;
-    static glm::vec3 delta_position;
+    static glm::vec3 _lastPosition;
+    static glm::vec3 _deltaPosition;
 
 public:
-    static void mouse_move(int x, int y);
-    static void set_callback_functions();
-    static bool get_key_down(int keycode);
-    static bool get_key(int keycode);
-    static bool get_key_up(int keycode);
+    static void mouseMove(int x, int y);
+    static void setCallbackFunctions();
+    static bool getKeyDown(int keycode);
+    static bool getKey(int keycode);
+    static bool getKeyUp(int keycode);
     static void keyboard(unsigned char key, int x, int y);
-    static void keyboard_up(unsigned char key, int x, int y);
-    static void mouse_click(int button, int state, int x, int y);
-    static bool is_any_key_pressed();
+    static void keyboardUp(unsigned char key, int x, int y);
+    static void mouseClick(int button, int state, int x, int y);
+    static bool isAnyKeyPressed();
     static void update();
-    static void update_cursor_lock();
-    static glm::vec3& get_mouse();
+    static void updateCursorLock();
+    static glm::vec3& getMouse();
 };
 
-bool Input::key_states[256] = { false };
-bool Input::key_down_dected[256] = { false };
-bool Input::is_cursor_locked = false;
+bool Input::_keyStates[256] = { false };
+bool Input::_keyDownDected[256] = { false };
+bool Input::_isCursorLocked = false;
 
-glm::vec3 Input::mouse_position = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 Input::last_position = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 Input::delta_position = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 Input::_mousePosition = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 Input::_lastPosition = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 Input::_deltaPosition = glm::vec3(0.0f, 0.0f, 0.0f);
 
-void Input::mouse_move(int x, int y)
+void Input::mouseMove(int x, int y)
 {
-    mouse_position.x = x;
-    mouse_position.y = y;
+    _mousePosition.x = x;
+    _mousePosition.y = y;
 }
 
-void Input::set_callback_functions() {
+void Input::setCallbackFunctions() {
     glutKeyboardFunc(keyboard);
-    glutKeyboardUpFunc(keyboard_up);
-    glutPassiveMotionFunc(mouse_move);
-    glutMouseFunc(mouse_click);
+    glutKeyboardUpFunc(keyboardUp);
+    glutPassiveMotionFunc(mouseMove);
+    glutMouseFunc(mouseClick);
 }
 
-bool Input::get_key_down(int keycode) {
-    if (key_states[keycode] && !key_down_dected[keycode]) {
-        key_down_dected[keycode] = true;
+bool Input::getKeyDown(int keycode) {
+    if (_keyStates[keycode] && !_keyDownDected[keycode]) {
+        _keyDownDected[keycode] = true;
         return true;
     }
     return false;
 }
 
-bool Input::get_key(int keycode) {
-    return key_states[keycode];
+bool Input::getKey(int keycode) {
+    return _keyStates[keycode];
 }
 
-bool Input::get_key_up(int keycode) {
-    if (!key_states[keycode] && key_down_dected[keycode])
+bool Input::getKeyUp(int keycode) {
+    if (!_keyStates[keycode] && _keyDownDected[keycode])
         return true;
 
     return false;
@@ -76,26 +76,26 @@ void Input::keyboard(unsigned char key, int x, int y) {
     if (isalpha(key))
         key = toupper(key);
 
-    key_states[key] = true;
+    _keyStates[key] = true;
 }
 
-void Input::keyboard_up(unsigned char key, int x, int y) {
+void Input::keyboardUp(unsigned char key, int x, int y) {
     if (isalpha(key))
         key = toupper(key);
 
-    key_states[key] = false;
-    key_down_dected[key] = false;
+    _keyStates[key] = false;
+    _keyDownDected[key] = false;
 }
 
-void Input::mouse_click(int button, int state, int x, int y) {
+void Input::mouseClick(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
         std::cout << "Cursor Position: x = " << x << ", y = " << y << std::endl;
     }
 }
 
-bool Input::is_any_key_pressed() {
+bool Input::isAnyKeyPressed() {
     for (int i = 0; i < 256; ++i) {
-        if (key_states[i]) {
+        if (_keyStates[i]) {
             return true;
         }
     }
@@ -103,26 +103,26 @@ bool Input::is_any_key_pressed() {
 }
 
 void Input::update() {
-    update_cursor_lock();
+    updateCursorLock();
 
-    if (!is_cursor_locked) {
-        delta_position = last_position - mouse_position;
-        last_position = mouse_position;
+    if (!_isCursorLocked) {
+        _deltaPosition = _lastPosition - _mousePosition;
+        _lastPosition = _mousePosition;
     }
     else {
-        delta_position.x = glutGet(GLUT_WINDOW_WIDTH) / 2 - mouse_position.x;
-        delta_position.y = glutGet(GLUT_WINDOW_HEIGHT) / 2 - mouse_position.y;
+        _deltaPosition.x = glutGet(GLUT_WINDOW_WIDTH) / 2 - _mousePosition.x;
+        _deltaPosition.y = glutGet(GLUT_WINDOW_HEIGHT) / 2 - _mousePosition.y;
     }
 
     for (int i = 0; i < 256; i++) {
-        if (!key_states[i]) {
-            key_down_dected[i] = false;
+        if (!_keyStates[i]) {
+            _keyDownDected[i] = false;
         }
     }
 }
 
-void Input::update_cursor_lock() {
-    if (is_cursor_locked) {
+void Input::updateCursorLock() {
+    if (_isCursorLocked) {
         glutSetCursor(GLUT_CURSOR_NONE);
         glutWarpPointer(glutGet(GLUT_WINDOW_WIDTH) / 2, glutGet(GLUT_WINDOW_HEIGHT) / 2);
     }
@@ -131,4 +131,4 @@ void Input::update_cursor_lock() {
     }
 }
 
-glm::vec3& Input::get_mouse() { return delta_position; }
+glm::vec3& Input::getMouse() { return _deltaPosition; }
