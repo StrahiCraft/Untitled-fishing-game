@@ -1,7 +1,8 @@
-#include "GameObject.h"
 #include "Input.h"
+#include "Fish.h"
 
 #include <vector>
+#include <time.h>
 
 float _deltaTime;
 int _previousTime;
@@ -9,12 +10,43 @@ int _previousTime;
 int _windowWidth = 800;
 int _windowHeight = 500;
 
-void initialize() {
+Fish* fish;
+GameObject* player;
 
+float playerSpeed = 300;
+
+void initialize() {
+	srand(time(NULL));
+
+	fish = new Fish(glm::vec2(0), glm::vec2(0),
+		new Sprite("Sprites/fish.png", glm::vec2(32), 1, glm::vec2(1), true), glm::vec2(_windowWidth, _windowHeight));
+
+	player = new GameObject(glm::vec2(400, 250), glm::vec2(0), primitive::createCircle(glm::vec3(1), glm::vec3(1, 0, 0), 16));
 }
 
 void update(float dt) {
+	player->setVelocity(glm::vec2(0));
 
+	if (Input::getKey('W')) {
+		player->setVelocity(glm::vec2(player->getVelocity().x, playerSpeed));
+	}
+	if (Input::getKey('S')) {
+		player->setVelocity(glm::vec2(player->getVelocity().x, -playerSpeed));
+	}
+	if (Input::getKey('A')) {
+		player->setVelocity(glm::vec2(-playerSpeed, player->getVelocity().y));
+	}
+	if (Input::getKey('D')) {
+		player->setVelocity(glm::vec2(playerSpeed, player->getVelocity().y));
+	}
+
+	if (glm::distance(player->getPosition(), fish->getPosition()) <= fish->getGoalCircleSize() + 16) {
+		fish->increaseCaptureScore(dt * 2);
+	}
+	fish->increaseCaptureScore(-dt);
+
+	fish->update(dt);
+	player->update(dt);
 }
 
 void render() {
@@ -22,6 +54,8 @@ void render() {
 	//Cistimo sve piksele
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	fish->render();
+	player->render();
 
 	//Menjamo bafer
 	glutSwapBuffers();
@@ -37,7 +71,6 @@ void gameLoop(void) {
 	render();
 
 	glutPostRedisplay();
-
 }
 
 void start(void) {

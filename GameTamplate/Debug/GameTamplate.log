@@ -1,14 +1,4 @@
-﻿  Source.cpp
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(98,21): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
-          with
-          [
-              T=float
-          ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(99,21): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  Main.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Input.h(45,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
           with
           [
@@ -19,12 +9,15 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Input.h(46,24): warning 
           [
               T=float
           ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Source.cpp(50,51): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Source.cpp(50,36): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Source.cpp(50,21): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-soil2.lib(SOIL2.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(SOIL2.obj)' or at ''; linking object as if no debug info
-soil2.lib(image_DXT.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(image_DXT.obj)' or at ''; linking object as if no debug info
-soil2.lib(image_helper.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(image_helper.obj)' or at ''; linking object as if no debug info
-soil2.lib(wfETC.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(wfETC.obj)' or at ''; linking object as if no debug info
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(98,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(99,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(19,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Debug\GameTamplate.exe

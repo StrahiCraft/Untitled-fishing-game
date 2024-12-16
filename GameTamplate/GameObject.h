@@ -6,7 +6,7 @@
 #include <gtc/matrix_transform.hpp>
 
 class GameObject {
-private:
+protected:
 	glm::vec2 _position;
 	float _rotation;
 	glm::vec2 _scale;
@@ -51,12 +51,12 @@ public:
 	void setRotation(float new_rotation) { _rotation = new_rotation; }
 
 	glm::vec2 getScale() const { return _scale; }
-	void set_scale(const glm::vec2& new_scale) { _scale = new_scale; }
+	void setScale(const glm::vec2& new_scale) { _scale = new_scale; }
 
 	Sprite* getSprite() const { return _sprite; }
 	void setSprite(Sprite* spr) { _sprite = spr; }
 
-	primitive_type getPrimitiveType() const { return _primitive.type; }
+	primitiveType getPrimitiveType() const { return _primitive.type; }
 
 	GLboolean getVisible() const { return _visible; }
 	void setVisible(const GLboolean is_visible) { this->_visible = is_visible; }
@@ -64,7 +64,7 @@ public:
 	GLboolean getActive() const { return _active; }
 	void setActive(const GLboolean is_active) { this->_active = is_active; }
 
-	void update(float dt) {
+	virtual void update(float dt) {
 		if (_active) {
 			if (_sprite) {
 				_sprite->update(dt);
@@ -74,7 +74,7 @@ public:
 		}
 	}
 
-	void render() {
+	virtual void render() {
 		glPushMatrix();
 
 		glTranslatef(_position.x, _position.y, 0.0f);
@@ -89,13 +89,13 @@ public:
 			}
 
 		switch (_primitive.type) {
-			case primitive_type::circle:
+			case primitiveType::circle:
 				drawCircle(_primitive.radius);
 				break;
-			case primitive_type::cube:
+			case primitiveType::cube:
 				drawCube(_primitive.size);
 				break;
-			case primitive_type::triangle:
+			case primitiveType::triangle:
 				drawTriangle(_primitive.base, _primitive.height);
 				break;
 			default:
@@ -106,7 +106,7 @@ public:
 		glPopMatrix();
 	}
 
-private:
+protected:
 	void drawCircle(float radius) {
 		glDisable(GL_TEXTURE_2D);
 
