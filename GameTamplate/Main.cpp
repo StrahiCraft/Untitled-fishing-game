@@ -14,8 +14,7 @@ int _windowHeight = 500;
 Fish* fish;
 Player* player;
 
-float playerAcceleration = 750;
-float playerSpeedCap = 300;
+float playerSpeed = 500;
 
 GameState* currentState;
 
@@ -37,7 +36,7 @@ void initialize() {
 		new Sprite("Sprites/fish.png", glm::vec2(32), 1, glm::vec2(1), true), glm::vec2(_windowWidth, _windowHeight));
 
 	player = new Player(glm::vec2(400, 250), glm::vec2(0), 
-		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerAcceleration, playerSpeedCap);
+		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerSpeed);
 
 	changeGameState(new Fishing(player, fish));
 

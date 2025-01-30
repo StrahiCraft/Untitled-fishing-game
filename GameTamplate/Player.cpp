@@ -1,9 +1,8 @@
 #include "Player.h"
 
-Player::Player(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, float acceleration, float speedCap) :
+Player::Player(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, float acceleration) :
 	GameObject(pos, vel, spr) {
-	_acceleration = acceleration;
-	_speedCap = speedCap;
+	_speed = acceleration;
 }
 
 void Player::update(float deltaTime) {
@@ -18,40 +17,37 @@ void Player::update(float deltaTime) {
 }
 
 void Player::handleInput() {
-	_movement = glm::vec2(0);
+	_newMovement = glm::vec2(0);
 
 	if (Input::getKey('W')) {
-		_movement.y += 1;
+		_newMovement.y += 1;
 	}
 	if (Input::getKey('S')) {
-		_movement.y -= 1;
+		_newMovement.y -= 1;
 	}
 	if (Input::getKey('A')) {
-		_movement.x -= 1;
+		_newMovement.x -= 1;
 	}
 	if (Input::getKey('D')) {
-		_movement.x += 1;
+		_newMovement.x += 1;
 	}
 }
 
 void Player::handleMovement(float deltaTime) {
-	if (_movement != glm::vec2(0)) {
-		_velocity += _movement * _acceleration * deltaTime;
-
-		_velocity = glm::clamp(_velocity, -_speedCap, _speedCap);
-
+	if (_newMovement != _currentMovement) {
+		_currentMovement = _newMovement;
 		_velocityLerp = 0;
 		_startVelocity = _velocity;
 	}
 
-	_velocity = _startVelocity * (1.0f - _velocityLerp) + glm::vec2(0);
+	_velocity = (_startVelocity) * (1.0f - _velocityLerp) + (_currentMovement) * _velocityLerp;
 	_velocityLerp += deltaTime;
 
 	if (_velocityLerp >= 1) {
 		_velocityLerp = 1;
 	}
 
-	setPosition(getPosition() + _velocity * deltaTime);
+	setPosition(getPosition() + _velocity * _speed * deltaTime);
 }
 
 void Player::render() {

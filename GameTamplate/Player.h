@@ -5,15 +5,15 @@ class Player :
     public GameObject
 {
 private:
-    glm::vec2 _movement = glm::vec2(0);
+    glm::vec2 _newMovement = glm::vec2(0);
+    glm::vec2 _currentMovement = glm::vec2(0);
 
-    float _acceleration;
-    float _speedCap;
+    float _speed;
 
     float _velocityLerp = 0;
     glm::vec2 _startVelocity = glm::vec2(0);
 public:
-    Player(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, float acceleration, float speedCap);
+    Player(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, float speed);
 
     virtual void update(float deltaTime);
     virtual void render();
@@ -21,6 +21,6 @@ public:
     void handleInput();
     void handleMovement(float deltaTime);
 
-    float getAcceleration() { return _acceleration; }
+    float getSpeed() { return _speed; }
 };
 

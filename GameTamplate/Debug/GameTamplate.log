@@ -1,4 +1,4 @@
-﻿  ReelingIn.cpp
+﻿  Main.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(98,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
@@ -10,4 +10,5 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(99,20): warning
               T=float
           ]
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(16,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(31,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Debug\GameTamplate.exe
