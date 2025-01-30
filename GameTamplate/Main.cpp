@@ -1,7 +1,8 @@
 #include "Input.h"
-#include "Fish.h"
+#include "Fishing.h"
+#include "ReelingIn.h"
+#include "EventSystem.h"
 
-#include <vector>
 #include <time.h>
 
 float _deltaTime;
@@ -11,46 +12,43 @@ int _windowWidth = 800;
 int _windowHeight = 500;
 
 Fish* fish;
-GameObject* player;
+Player* player;
 
-float playerSpeed = 300;
+float playerAcceleration = 750;
+float playerSpeedCap = 300;
+
+GameState* currentState;
+
+void changeGameState(GameState* newState) {
+	currentState = newState;
+	currentState->onStateEnter();
+}
+
+void reelIn() {
+	changeGameState(new ReelingIn(player, fish));
+}
 
 void initialize() {
 	srand(time(NULL));
+	glPointSize(10);
+	glLineWidth(3);
 
 	fish = new Fish(glm::vec2(0), glm::vec2(0),
 		new Sprite("Sprites/fish.png", glm::vec2(32), 1, glm::vec2(1), true), glm::vec2(_windowWidth, _windowHeight));
 
-	player = new GameObject(glm::vec2(400, 250), glm::vec2(0), primitive::createCircle(glm::vec3(1), glm::vec3(1, 0, 0), 16));
+	player = new Player(glm::vec2(400, 250), glm::vec2(0), 
+		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerAcceleration, playerSpeedCap);
+
+	changeGameState(new Fishing(player, fish));
+
+	EventSystem::subscribeFunction("ReelIn", reelIn);
 }
 
-void update(float dt) {
-	player->setVelocity(glm::vec2(0));
-
-	if (Input::getKey('W')) {
-		player->setVelocity(glm::vec2(player->getVelocity().x, playerSpeed));
-	}
-	if (Input::getKey('S')) {
-		player->setVelocity(glm::vec2(player->getVelocity().x, -playerSpeed));
-	}
-	if (Input::getKey('A')) {
-		player->setVelocity(glm::vec2(-playerSpeed, player->getVelocity().y));
-	}
-	if (Input::getKey('D')) {
-		player->setVelocity(glm::vec2(playerSpeed, player->getVelocity().y));
-	}
-
-	if (glm::distance(player->getPosition(), fish->getPosition()) <= fish->getGoalCircleSize() + 16) {
-		fish->increaseCaptureScore(dt * 2);
-	}
-	fish->increaseCaptureScore(-dt);
-
-	fish->update(dt);
-	player->update(dt);
+void update(float deltaTime) {
+	currentState->onStateUpdate(deltaTime);
 }
 
 void render() {
-
 	//Cistimo sve piksele
 	glClear(GL_COLOR_BUFFER_BIT);
 
@@ -59,7 +57,6 @@ void render() {
 
 	//Menjamo bafer
 	glutSwapBuffers();
-
 }
 
 void gameLoop(void) {

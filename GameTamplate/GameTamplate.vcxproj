@@ -144,14 +144,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dictionary.cpp" />
+    <ClCompile Include="DictionaryItem.cpp" />
+    <ClCompile Include="EventSystem.cpp" />
     <ClCompile Include="Fish.cpp" />
+    <ClCompile Include="Fishing.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ReelingIn.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="DictionaryItem.h" />
+    <ClInclude Include="EventSystem.h" />
     <ClInclude Include="Fish.h" />
+    <ClInclude Include="Fishing.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Primitives.h" />
+    <ClInclude Include="ReelingIn.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

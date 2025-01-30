@@ -17,11 +17,13 @@ void Fish::update(float dt) {
 		return;
 	}
 
+	if (_reelingIn) {
+		return;
+	}
+
 	if (_currentCircleSize >= _goalCircleSize) {
-		resetFish();
-
-		// go to second minigame
-
+		EventSystem::invokeChannel("ReelIn");
+		_reelingIn = true;
 		return;
 	}
 
@@ -35,20 +37,21 @@ void Fish::update(float dt) {
 }
 
 void Fish::render() {
+	if (!_active) {
+		return;
+	}
 	glPushMatrix();
 
 	glTranslatef(_position.x, _position.y, 0.0f);
 	glRotatef(_rotation, 0.0f, 0.0f, 1.0f);
 	glScalef(_scale.x, _scale.y, 1.0f);
 
-	if (!_active) {
-		return;
+	if (!_reelingIn) {
+		_primitive = _goalCircle;
+		drawCircle(_goalCircleSize);
+		_primitive = _currentFishingCircle;
+		drawCircle(_currentCircleSize);
 	}
-	
-	_primitive = _goalCircle;
-	drawCircle(_goalCircleSize);
-	_primitive = _currentFishingCircle;
-	drawCircle(_currentCircleSize);
 
 	glTranslatef(-_sprite->getSize().x / 2, -_sprite->getSize().y / 2, 0.0f);
 

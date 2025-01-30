@@ -64,12 +64,14 @@ public:
 	GLboolean getActive() const { return _active; }
 	void setActive(const GLboolean is_active) { this->_active = is_active; }
 
-	virtual void update(float dt) {
+	float getVelocityAngle();
+
+	virtual void update(float deltaTime) {
 		if (_active) {
 			if (_sprite) {
-				_sprite->update(dt);
+				_sprite->update(deltaTime);
 			}
-			_position += _velocity * dt;
+			_position += _velocity * deltaTime;
 			checkEdges();
 		}
 	}

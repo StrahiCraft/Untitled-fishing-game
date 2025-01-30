@@ -1,5 +1,7 @@
 #pragma once
 #include "GameObject.h"
+#include "EventSystem.h"
+
 class Fish :
     public GameObject
 {
@@ -13,6 +15,8 @@ private:
     float _captureRate;
     float _currentCircleSize;
     float _goalCircleSize;
+
+    bool _reelingIn = false;
 public:
     Fish(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 windowSize);
 
