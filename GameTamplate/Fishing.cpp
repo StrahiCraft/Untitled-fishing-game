@@ -1,7 +1,7 @@
 #include "Fishing.h"
 
 void Fishing::onStateEnter() {
-
+	_player->setPosition(glm::vec2(400, 400));
 }
 
 void Fishing::onStateUpdate(float deltaTime) {
@@ -12,4 +12,9 @@ void Fishing::onStateUpdate(float deltaTime) {
 
 	_fish->update(deltaTime);
 	_player->update(deltaTime);
+}
+
+void Fishing::render() {
+	_fish->render();
+	_player->render();
 }

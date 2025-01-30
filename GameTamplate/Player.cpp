@@ -70,7 +70,7 @@ void Player::render() {
 	
 	glBegin(GL_LINES);
 	glColor3f(1, 1, 1);
-	glVertex2f(250, 500);
+	glVertex2f(400, 800);
 	glVertex2f(_position.x + 60 * -std::sin(_rotation / 57.2958f), _position.y + 60 * std::cos(_rotation / 57.2958f));
 	glEnd();
 }

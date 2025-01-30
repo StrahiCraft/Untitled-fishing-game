@@ -70,6 +70,8 @@ void Fish::randomizeDestination() {
 }
 
 void Fish::resetFish() {
+	_reelingIn = false;
+
 	randomizePosition();
 	randomizeDestination();
 	_currentCircleSize = 0;

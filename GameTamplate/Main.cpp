@@ -9,7 +9,7 @@ float _deltaTime;
 int _previousTime;
 
 int _windowWidth = 800;
-int _windowHeight = 500;
+int _windowHeight = 800;
 
 Fish* fish;
 Player* player;
@@ -23,8 +23,14 @@ void changeGameState(GameState* newState) {
 	currentState->onStateEnter();
 }
 
+void startFishing() {
+	changeGameState(new Fishing(player, fish));
+	fish->resetFish();
+}
+
 void reelIn() {
-	changeGameState(new ReelingIn(player, fish));
+	// TODO make reel in threshold depend on fish type
+	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight), 40, rand() % 25 + 10));
 }
 
 void initialize() {
@@ -41,6 +47,7 @@ void initialize() {
 	changeGameState(new Fishing(player, fish));
 
 	EventSystem::subscribeFunction("ReelIn", reelIn);
+	EventSystem::subscribeFunction("StartFishing", startFishing);
 }
 
 void update(float deltaTime) {
@@ -51,8 +58,7 @@ void render() {
 	//Cistimo sve piksele
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	fish->render();
-	player->render();
+	currentState->render();
 
 	//Menjamo bafer
 	glutSwapBuffers();

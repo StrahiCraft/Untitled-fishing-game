@@ -22,13 +22,14 @@ public:
 
     float getGoalCircleSize();
 
-    void update(float dt);
+    void update(float deltaTime);
     void render();
-    
-    void randomizePosition();
-    void randomizeDestination();
-    void resetFish();
 
     void increaseCaptureScore(float dt);
+    void resetFish();
+
+private:
+    void randomizePosition();
+    void randomizeDestination();
 };
 

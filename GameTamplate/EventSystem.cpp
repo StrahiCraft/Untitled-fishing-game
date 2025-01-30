@@ -14,7 +14,6 @@ void EventSystem::subscribeFunction(string channel, void (*function)()) {
 
 void EventSystem::invokeChannel(string channel) {
 	vector<void (*)()> eventFunctions = _events.getValue(channel);
-	_events.setValue(channel, eventFunctions);
 
 	for (void (*function)() : eventFunctions) {
 		function();

@@ -178,17 +178,17 @@ protected:
 	}
 
 	void checkEdges() {
-		if (_position.x > glutGet(GLUT_WINDOW_WIDTH)) {
-			_position.x = static_cast<float>(glutGet(GLUT_WINDOW_WIDTH));
+		if (_position.x > glutGet(GLUT_WINDOW_WIDTH) - 30) {
+			_position.x = static_cast<float>(glutGet(GLUT_WINDOW_WIDTH) - 30);
 		}
-		else if (_position.x < 0) {
-			_position.x = 0.0f;
+		else if (_position.x < 30) {
+			_position.x = 30;
 		}
-		if (_position.y > glutGet(GLUT_WINDOW_HEIGHT)) {
-			_position.y = static_cast<float>(glutGet(GLUT_WINDOW_HEIGHT));
+		if (_position.y > glutGet(GLUT_WINDOW_HEIGHT) - 30) {
+			_position.y = static_cast<float>(glutGet(GLUT_WINDOW_HEIGHT) - 30);
 		}
-		else if (_position.y < 0) {
-			_position.y = 0.0f;
+		else if (_position.y < 30) {
+			_position.y = 30;
 		}
 	}
 };

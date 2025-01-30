@@ -13,5 +13,6 @@ public:
 	GameState(Player* player, Fish* fish);
 	virtual void onStateEnter() = 0;
 	virtual void onStateUpdate(float deltaTime) = 0;
+	virtual void render() = 0;
 };
 
