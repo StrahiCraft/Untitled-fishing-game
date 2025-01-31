@@ -1,9 +1,10 @@
 #include "TextRenderer.h"
 
-TextRenderer::TextRenderer(glm::vec2 textPosition, Sprite* fontSheet, int characterDistance) {
+TextRenderer::TextRenderer(glm::vec2 textPosition, Sprite* fontSheet, int characterDistance, int firstCharacterASCIIOffset) {
 	_textPosition = textPosition;
 	_fontSheet = fontSheet;
 	_characterOffset = characterDistance;
+	_firstCharacterASCIIOffset = firstCharacterASCIIOffset;
 	_fontSheet->setIsAnimated(false);
 }
 
@@ -12,7 +13,7 @@ void TextRenderer::setText(string newText) {
 
 	for (int i = 0; i < newText.length(); i++) {
 		_characterSprites.push_back(new Sprite(*_fontSheet));
-		_characterSprites[i]->setCurrentFrame(newText[i] - 32);
+		_characterSprites[i]->setCurrentFrame(newText[i] - _firstCharacterASCIIOffset);
 	}
 }
 

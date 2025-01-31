@@ -61,7 +61,7 @@ void ReelingIn::checkForBombCollision() {
 void ReelingIn::handleScoreCalculation(float deltaTime) {
 	if (_reelInScore < 0) {
 		// TODO go to game over screen
-		EventSystem::invokeChannel("StartFishing");
+		EventSystem::invokeChannel("GameOver");
 		cout << "GAME OVER" << endl;
 		return;
 	}

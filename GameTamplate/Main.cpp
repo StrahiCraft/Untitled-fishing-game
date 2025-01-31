@@ -17,7 +17,13 @@ float playerSpeed = 500;
 
 GameState* currentState;
 
-TextRenderer* textRenderer;
+TextRenderer* scoreText;
+int score = 0;
+
+void resetScore() {
+	score = 0;
+	scoreText->setText("Score:" + to_string(score));
+}
 
 void changeGameState(GameState* newState) {
 	currentState = newState;
@@ -27,6 +33,7 @@ void changeGameState(GameState* newState) {
 void startFishing() {
 	changeGameState(new Fishing(player, fish));
 	fish->resetFish();
+	scoreText->setText("Score:" + to_string(++score));
 }
 
 void reelIn() {
@@ -49,10 +56,12 @@ void initialize() {
 
 	EventSystem::subscribeFunction("ReelIn", reelIn);
 	EventSystem::subscribeFunction("StartFishing", startFishing);
+	EventSystem::subscribeFunction("GameOver", startFishing);
+	EventSystem::subscribeFunction("GameOver", resetScore);
 
-	textRenderer = new TextRenderer(glm::vec2(0), 
-		new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), 27);
-	textRenderer->setText("TEST TEXT");
+	scoreText = new TextRenderer(glm::vec2(0, 750), 
+		new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), 27, 32);
+	scoreText->setText("Score:" + to_string(score));
 }
 
 void update(float deltaTime) {
@@ -64,7 +73,7 @@ void render() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	currentState->render();
-	textRenderer->render();
+	scoreText->render();
 
 	//Menjamo bafer
 	glutSwapBuffers();
