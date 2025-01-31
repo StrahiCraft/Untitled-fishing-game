@@ -1,7 +1,6 @@
-#include "Input.h"
 #include "Fishing.h"
 #include "ReelingIn.h"
-#include "EventSystem.h"
+#include "TextRenderer.h"
 
 #include <time.h>
 
@@ -17,6 +16,8 @@ Player* player;
 float playerSpeed = 500;
 
 GameState* currentState;
+
+TextRenderer* textRenderer;
 
 void changeGameState(GameState* newState) {
 	currentState = newState;
@@ -48,6 +49,10 @@ void initialize() {
 
 	EventSystem::subscribeFunction("ReelIn", reelIn);
 	EventSystem::subscribeFunction("StartFishing", startFishing);
+
+	textRenderer = new TextRenderer(glm::vec2(0), 
+		new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), 27);
+	textRenderer->setText("TEST TEXT");
 }
 
 void update(float deltaTime) {
@@ -59,6 +64,7 @@ void render() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	currentState->render();
+	textRenderer->render();
 
 	//Menjamo bafer
 	glutSwapBuffers();

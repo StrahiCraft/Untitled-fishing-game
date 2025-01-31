@@ -20,32 +20,33 @@ private:
 
 	GLboolean _isTransparent;
 	GLboolean _isSpriteSheet;
+	GLboolean _isAnimated = true;
 
 	glm::vec2 _spriteFlip;
 	glm::vec2 size;
 
 public:
 	Sprite() = default;
-	Sprite(const char* file_name,
+	Sprite(const char* fileName,
 		glm::vec2 size,
 		GLuint number_of_textures = 1,
-		glm::vec2 number_of_frames = glm::vec2(1),
-		GLboolean is_transparent = true) : size(size), _numberOfFrames(number_of_frames),
+		glm::vec2 numberOfFrames = glm::vec2(1),
+		GLboolean isTransparent = true) : size(size), _numberOfFrames(numberOfFrames),
 		_animationDelay(0.25f), _animationElapsedTime(0.0f),
-		_isTransparent(is_transparent), _spriteFlip(false) {
+		_isTransparent(isTransparent), _spriteFlip(false) {
 
-		this->_numberOfTextures = static_cast<unsigned int>(number_of_frames.x * number_of_frames.y);
+		this->_numberOfTextures = static_cast<unsigned int>(numberOfFrames.x * numberOfFrames.y);
 		_textures = new GLuint[this->_numberOfTextures];
 
 		_textureIndex = 0;
 		_currentFrame = 0;
 
-		if (!addTexture(file_name, is_transparent))
+		if (!addTexture(fileName, isTransparent))
 			std::cout << "Texture loading failed: " << SOIL_last_result() << std::endl;
 	}
 
-	const bool addTexture(const char* file_name, const bool use_transparency) {
-		GLuint texture = SOIL_load_OGL_texture(file_name, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, 0);
+	const bool addTexture(const char* fileName, const bool useTransparency) {
+		GLuint texture = SOIL_load_OGL_texture(fileName, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, 0);
 
 		if (texture == 0)
 			return false;
@@ -55,13 +56,17 @@ public:
 
 		_isSpriteSheet = (_textureIndex == 1 && _numberOfTextures > 1);
 
-		this->_isTransparent = use_transparency;
+		this->_isTransparent = useTransparency;
 
 		return true;
 	}
 
-	void update(GLfloat delta_time) {
-		_animationElapsedTime += delta_time;
+	void update(GLfloat deltaTime) {
+		if (!_isAnimated) {
+			return;
+		}
+
+		_animationElapsedTime += deltaTime;
 		if (_animationElapsedTime >= _animationDelay) {
 			_currentFrame++;
 			if (_currentFrame >= _numberOfTextures)
@@ -154,32 +159,34 @@ public:
 		}
 	}
 
+	void setIsAnimated(const bool& isAnimated) { this->_isAnimated = isAnimated; }
+
 	unsigned int getTextureIndex() const { return _textureIndex; }
-	void setTextureIndex(const unsigned int& texture_index) { this->_textureIndex = texture_index; }
+	void setTextureIndex(const unsigned int& textureIndex) { this->_textureIndex = textureIndex; }
 
 	unsigned int getCurrentFrame() const { return _currentFrame; }
-	void setCurrentFrame(const unsigned int& current_frame) { this->_currentFrame = current_frame; }
+	void setCurrentFrame(const unsigned int& currentFrame) { this->_currentFrame = currentFrame; }
 
 	unsigned int getNumberOfTextures() const { return _numberOfTextures; }
-	void setNumberOfTextures(const unsigned int& number_of_textures) { this->_numberOfTextures = number_of_textures; }
+	void setNumberOfTextures(const unsigned int& numberOfTextures) { this->_numberOfTextures = numberOfTextures; }
 
 	glm::vec2 getNumberOfFrames() const { return _numberOfFrames; }
-	void setNumberOfFrames(const glm::vec2& number_of_frames) { this->_numberOfFrames = number_of_frames; }
+	void setNumberOfFrames(const glm::vec2& numberOfFrames) { this->_numberOfFrames = numberOfFrames; }
 
 	GLfloat getAnimationDelay() const { return _animationDelay; }
-	void setAnimationDelay(const GLfloat& animation_delay) { this->_animationDelay = animation_delay; }
+	void setAnimationDelay(const GLfloat& animationDelay) { this->_animationDelay = animationDelay; }
 
 	GLfloat getAnimationElapsedTime() const { return _animationElapsedTime; }
-	void setAnimationElapsedTime(const GLfloat& animation_elapsed_time) { this->_animationElapsedTime = animation_elapsed_time; }
+	void setAnimationElapsedTime(const GLfloat& animationElapsedTime) { this->_animationElapsedTime = animationElapsedTime; }
 
 	GLboolean getIsTransparent() const { return _isTransparent; }
-	void setIsTransparent(const GLboolean& is_transparent) { this->_isTransparent = is_transparent; }
+	void setIsTransparent(const GLboolean& isTransparent) { this->_isTransparent = isTransparent; }
 
 	GLboolean getIsSpriteSheet() const { return _isSpriteSheet; }
-	void setIsSpriteSheet(const GLboolean& is_sprite_sheet) { this->_isSpriteSheet = is_sprite_sheet; }
+	void setIsSpriteSheet(const GLboolean& isSpriteSheet) { this->_isSpriteSheet = isSpriteSheet; }
 
 	glm::vec2 getSpriteFlip() const { return _spriteFlip; }
-	void setSpriteFlip(const glm::vec2& sprite_flip) { this->_spriteFlip = sprite_flip; }
+	void setSpriteFlip(const glm::vec2& spriteFlip) { this->_spriteFlip = spriteFlip; }
 
 	glm::vec2 getSize() const { return size; }
 	void setSize(const glm::vec2& size) { this->size = size; }

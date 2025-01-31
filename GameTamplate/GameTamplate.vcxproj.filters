@@ -37,6 +37,12 @@
     <Filter Include="Source Files\Utility\Dictionary">
       <UniqueIdentifier>{f86c8eb2-d901-4000-8183-e1e8e8d32fa3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObjects\UI">
+      <UniqueIdentifier>{30e8bc63-b54f-46ec-bf2a-eb58b984f429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\UI">
+      <UniqueIdentifier>{950bcde1-8e7b-4274-bda6-a03f6d92a2b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -74,6 +80,12 @@
     </ClCompile>
     <ClCompile Include="Bomb.cpp">
       <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRenderer.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>Source Files\GameObjects\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="Bomb.h">
       <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>Header Files\GameObjects\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

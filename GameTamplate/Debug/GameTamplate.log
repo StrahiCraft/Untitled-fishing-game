@@ -1,10 +1,21 @@
-﻿  Fish.cpp
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(98,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+﻿  Bomb.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
               T=float
           ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(99,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Fish.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
               T=float
@@ -13,17 +24,101 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(16,2): war
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fish.cpp(78,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fish.cpp(79,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fish.cpp(80,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  ReelingIn.cpp
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(98,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+  Fishing.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
               T=float
           ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(99,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
               T=float
           ]
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(16,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+  GameObject.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+  GameState.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(16,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+  Main.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(16,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(38,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Player.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+  ProgressBar.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+  ReelingIn.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(16,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+  TextRenderer.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(103,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(22,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(23,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   Generating Code...
   GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Debug\GameTamplate.exe

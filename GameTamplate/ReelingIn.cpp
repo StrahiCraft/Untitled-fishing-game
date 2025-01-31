@@ -10,6 +10,9 @@ ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float ree
 
 void ReelingIn::onStateEnter()
 {
+	_progressBar = new ProgressBar(glm::vec2(400, 50), glm::vec2(500, 15),
+		glm::vec3(1), glm::vec3(0.2f), glm::vec3(0.5f, 0, 0));
+
 	for (int i = 0; i < _bombCount; i++) {
 		_bombs.push_back(new Bomb(glm::vec2(0), glm::vec2(0, -150),
 			new Sprite("Sprites/bomb.png", glm::vec2(32), 1, glm::vec2(1), true), _windowSize));
@@ -20,9 +23,11 @@ void ReelingIn::onStateEnter()
 
 void ReelingIn::onStateUpdate(float deltaTime)
 {
+	_progressBar->updateProgressBar(_reelInScore / _reelInThreshold);
 	checkForBombCollision();
 
 	_player->update(deltaTime);
+	_progressBar->update(deltaTime);
 	_fish->setPosition(_player->getPosition());
 
 	for (int i = 0; i < _bombCount; i++) {
@@ -40,12 +45,14 @@ void ReelingIn::render()
 	for (int i = 0; i < _bombCount; i++) {
 		_bombs[i]->render();
 	}
+	_progressBar->render();
 }
 
 void ReelingIn::checkForBombCollision() {
 	for (Bomb* bomb : _bombs) {
 		if (glm::distance(_player->getPosition(), bomb->getPosition()) <= 45) {
 			_reelInScore -= 10;
+			_progressBar->decayProgressBar(_reelInScore / _reelInThreshold);
 			bomb->resetBomb();
 		}
 	}
