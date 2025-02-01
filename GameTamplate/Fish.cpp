@@ -4,12 +4,21 @@ Fish::Fish(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 wi
 	_windowSize = windowSize;
 	_goalCircle = primitive::createCircle(glm::vec3(0), glm::vec3(0.25f), 320);
 	_currentFishingCircle = primitive::createCircle(glm::vec3(0), glm::vec3(1), 32);
-	resetFish();
 }
 
 float Fish::getGoalCircleSize()
 {
-	return _goalCircleSize;
+	return _fishStats->getGoalCircleSize();
+}
+
+int Fish::getScore()
+{
+	return _fishStats->getScore();
+}
+
+float Fish::getWeight()
+{
+	return _fishStats->getWeight();
 }
 
 void Fish::update(float dt) {
@@ -21,7 +30,7 @@ void Fish::update(float dt) {
 		return;
 	}
 
-	if (_currentCircleSize >= _goalCircleSize) {
+	if (_currentCircleSize >= _fishStats->getGoalCircleSize()) {
 		EventSystem::invokeChannel("ReelIn");
 		_reelingIn = true;
 		return;
@@ -32,8 +41,7 @@ void Fish::update(float dt) {
 		return;
 	}
 
-
-	_position += _velocity * dt * _fishSpeed;
+	_position += _velocity * dt * _fishStats->getFishSpeed();
 }
 
 void Fish::render() {
@@ -48,7 +56,7 @@ void Fish::render() {
 
 	if (!_reelingIn) {
 		_primitive = _goalCircle;
-		drawCircle(_goalCircleSize);
+		drawCircle(_fishStats->getGoalCircleSize());
 		_primitive = _currentFishingCircle;
 		drawCircle(_currentCircleSize);
 	}
@@ -69,19 +77,18 @@ void Fish::randomizeDestination() {
 	_velocity = glm::normalize(_destination - _position);
 }
 
-void Fish::resetFish() {
+void Fish::resetFish(string statsFilePath) {
 	_reelingIn = false;
 
 	randomizePosition();
 	randomizeDestination();
 	_currentCircleSize = 0;
-	_goalCircleSize = rand() % 150 + 50;
-	_captureRate = rand() % 50 + 25;
-	_fishSpeed = rand() % 200 + 100;
+	_fishStats = new FishStats(statsFilePath);
+	setSprite(_fishStats->getFishSprite());
 }
 
 void Fish::increaseCaptureScore(float dt) {
-	_currentCircleSize += dt * _captureRate;
+	_currentCircleSize += dt * _fishStats->getCaptureRate();
 
 	if (_currentCircleSize <= 0) {
 		_currentCircleSize = 0;

@@ -6,6 +6,7 @@ ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float ree
 	_reelInThreshold = reelInThreshold;
 	_reelInScore = _reelInThreshold / 2.0f;
 	_bombCount = bombCount;
+	_player->setSpeedDebuff(fish->getWeight());
 }
 
 void ReelingIn::onStateEnter()

@@ -47,7 +47,15 @@ void Player::handleMovement(float deltaTime) {
 		_velocityLerp = 1;
 	}
 
-	setPosition(getPosition() + _velocity * _speed * deltaTime);
+	setPosition(getPosition() + _velocity * (_speed - _speedDebuff) * deltaTime);
+}
+
+void Player::setSpeedDebuff(float fishWeight) {
+	if (fishWeight * 5 > _speed) {
+		_speedDebuff = 0.9f * _speed;
+		return;
+	}
+	_speedDebuff = fishWeight * 5;
 }
 
 void Player::render() {

@@ -150,6 +150,7 @@
     <ClCompile Include="EventSystem.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="Fishing.cpp" />
+    <ClCompile Include="FishStats.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="EventSystem.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="Fishing.h" />
+    <ClInclude Include="FishStats.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Input.h" />

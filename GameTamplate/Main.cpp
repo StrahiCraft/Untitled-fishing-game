@@ -1,6 +1,7 @@
 #include "Fishing.h"
 #include "ReelingIn.h"
 #include "TextRenderer.h"
+#include "FishStats.h"
 
 #include <time.h>
 
@@ -20,6 +21,12 @@ GameState* currentState;
 TextRenderer* scoreText;
 int score = 0;
 
+vector<string> fishStats = {
+	"FishStats/carp.fish",
+	"FishStats/clownFish.fish",
+	"FishStats/triggerClownFish.fish",
+};
+
 void resetScore() {
 	score = 0;
 	scoreText->setText("Score:" + to_string(score));
@@ -31,9 +38,10 @@ void changeGameState(GameState* newState) {
 }
 
 void startFishing() {
+	score += fish->getScore();
+	scoreText->setText("Score:" + to_string(score));
+	fish->resetFish(fishStats[rand() % fishStats.size()]);
 	changeGameState(new Fishing(player, fish));
-	fish->resetFish();
-	scoreText->setText("Score:" + to_string(++score));
 }
 
 void reelIn() {
@@ -47,7 +55,8 @@ void initialize() {
 	glLineWidth(3);
 
 	fish = new Fish(glm::vec2(0), glm::vec2(0),
-		new Sprite("Sprites/fish.png", glm::vec2(32), 1, glm::vec2(1), true), glm::vec2(_windowWidth, _windowHeight));
+		new Sprite("Sprites/fish.png", glm::vec2(64, 32), 1, glm::vec2(1), true), glm::vec2(_windowWidth, _windowHeight));
+	fish->resetFish(fishStats[rand() % fishStats.size()]);
 
 	player = new Player(glm::vec2(400, 250), glm::vec2(0), 
 		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerSpeed);

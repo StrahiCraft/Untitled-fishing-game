@@ -9,6 +9,7 @@ private:
     glm::vec2 _currentMovement = glm::vec2(0);
 
     float _speed;
+    float _speedDebuff;
 
     float _velocityLerp = 0;
     glm::vec2 _startVelocity = glm::vec2(0);
@@ -22,5 +23,6 @@ public:
     void handleMovement(float deltaTime);
 
     float getSpeed() { return _speed; }
+    void setSpeedDebuff(float fishWeight);
 };
 

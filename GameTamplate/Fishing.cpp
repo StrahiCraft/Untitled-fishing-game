@@ -2,6 +2,7 @@
 
 void Fishing::onStateEnter() {
 	_player->setPosition(glm::vec2(400, 400));
+	_player->setSpeedDebuff(0);
 }
 
 void Fishing::onStateUpdate(float deltaTime) {

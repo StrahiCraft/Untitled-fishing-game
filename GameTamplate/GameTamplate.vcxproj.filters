@@ -87,6 +87,9 @@
     <ClCompile Include="ProgressBar.cpp">
       <Filter>Source Files\GameObjects\UI</Filter>
     </ClCompile>
+    <ClCompile Include="FishStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="TextRenderer.h">
       <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="FishStats.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
