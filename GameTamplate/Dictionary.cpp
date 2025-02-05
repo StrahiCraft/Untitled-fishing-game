@@ -17,9 +17,9 @@ void Dictionary<K, V>::addItem(K key, V value) {
 
 template<typename K, typename V>
 void Dictionary<K, V>::removeItem(K key) {
-	DictionaryItem<K, V> *item = getItemIndex(key);
+	int itemIndex = getItemIndex(key);
 
-	_dictionary.erase(remove(_dictionary.begin(), _dictionary.end(), item), _dictionary.end());
+	_dictionary.erase(_dictionary.begin() + itemIndex);
 }
 
 template<typename K, typename V>

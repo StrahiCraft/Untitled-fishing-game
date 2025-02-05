@@ -16,6 +16,7 @@ public:
     ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInThreshold, int bombCount);
     void onStateEnter();
     void onStateUpdate(float deltaTime);
+    void onStateExit();
     void render();
 private:
     void checkForBombCollision();

@@ -1,6 +1,7 @@
 #include "Fishing.h"
 
 void Fishing::onStateEnter() {
+	_player->setActive(true);
 	_player->setPosition(glm::vec2(400, 400));
 	_player->setSpeedDebuff(0);
 }
@@ -15,7 +16,10 @@ void Fishing::onStateUpdate(float deltaTime) {
 	_player->update(deltaTime);
 }
 
+void Fishing::onStateExit() {}
+
 void Fishing::render() {
 	_fish->render();
 	_player->render();
+	ScoreManager::render();
 }

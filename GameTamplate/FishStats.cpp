@@ -27,6 +27,9 @@ FishStats::FishStats(string filePath) {
 	_score *= (1 + 1 * _weightMultiplier);
 	
 	_fishSprite = new Sprite(spriteFilePath.c_str(), glm::vec2(64, 32) * (1.0f + 1.0f * _weightMultiplier), 1, glm::vec2(1), true);
+	
+	file >> _fishName;
+
 	file.close();
 }
 
@@ -53,4 +56,14 @@ float FishStats::getGoalCircleSize() {
 int FishStats::getScore()
 {
 	return _score;
+}
+
+string FishStats::getName()
+{
+	return _fishName;
+}
+
+string FishStats::getDescription()
+{
+	return _fishDescription;
 }

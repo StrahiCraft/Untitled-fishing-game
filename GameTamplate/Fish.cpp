@@ -21,6 +21,16 @@ float Fish::getWeight()
 	return _fishStats->getWeight();
 }
 
+string Fish::getName()
+{
+	return _fishStats->getName();
+}
+
+string Fish::getDescription()
+{
+	return _fishStats->getDescription();
+}
+
 void Fish::update(float dt) {
 	if (!_active) {
 		return;
@@ -29,6 +39,15 @@ void Fish::update(float dt) {
 	if (_reelingIn) {
 		return;
 	}
+
+	if (_velocity.x < 0) {
+		_sprite->setSpriteFlip(glm::vec2(0, 1));
+	}
+	else {
+		_sprite->setSpriteFlip(glm::vec2(0));
+	}
+
+	setRotation(getVelocityAngle() + 90);
 
 	if (_currentCircleSize >= _fishStats->getGoalCircleSize()) {
 		EventSystem::invokeChannel("ReelIn");
@@ -48,6 +67,7 @@ void Fish::render() {
 	if (!_active) {
 		return;
 	}
+
 	glPushMatrix();
 
 	glTranslatef(_position.x, _position.y, 0.0f);
@@ -69,7 +89,7 @@ void Fish::render() {
 }
 
 void Fish::randomizePosition() {
-	_position = glm::vec2(rand() % (int)_windowSize.x, rand() % (int)_windowSize.y);
+	setPosition(glm::vec2(rand() % (int)_windowSize.x, rand() % (int)_windowSize.y));
 }
 
 void Fish::randomizeDestination() {

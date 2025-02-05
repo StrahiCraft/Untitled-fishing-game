@@ -1,6 +1,5 @@
 #include "GameObject.h"
 
 float GameObject::getVelocityAngle() {
-	return -std::acos(_velocity.y
-		/ (std::sqrt(_velocity.x * _velocity.x + _velocity.y * _velocity.y))) * 57.2958f * glm::normalize(_velocity).x;
+	return atan2(-_velocity.x, _velocity.y) * 57.295827908797774375395898255342f;
 }

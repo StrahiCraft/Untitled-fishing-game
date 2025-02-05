@@ -5,3 +5,4 @@ Sprites/Fish/clownFish.png
 200
 100
 2
+CLOWN_FISH

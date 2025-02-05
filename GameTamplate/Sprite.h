@@ -34,7 +34,8 @@ public:
 		GLboolean isTransparent = true) : size(size), _numberOfFrames(numberOfFrames),
 		_animationDelay(0.25f), _animationElapsedTime(0.0f),
 		_isTransparent(isTransparent), _spriteFlip(false) {
-
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		this->_numberOfTextures = static_cast<unsigned int>(numberOfFrames.x * numberOfFrames.y);
 		_textures = new GLuint[this->_numberOfTextures];
 

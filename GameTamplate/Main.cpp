@@ -1,7 +1,6 @@
 #include "Fishing.h"
 #include "ReelingIn.h"
-#include "TextRenderer.h"
-#include "FishStats.h"
+#include "FishCaught.h"
 
 #include <time.h>
 
@@ -18,9 +17,6 @@ float playerSpeed = 500;
 
 GameState* currentState;
 
-TextRenderer* scoreText;
-int score = 0;
-
 vector<string> fishStats = {
 	"FishStats/carp.fish",
 	"FishStats/clownFish.fish",
@@ -28,24 +24,32 @@ vector<string> fishStats = {
 };
 
 void resetScore() {
-	score = 0;
-	scoreText->setText("Score:" + to_string(score));
+	ScoreManager::setScore(0);
 }
 
 void changeGameState(GameState* newState) {
+	if (currentState != NULL) {
+		currentState->onStateExit();
+	}
 	currentState = newState;
 	currentState->onStateEnter();
 }
 
 void startFishing() {
-	score += fish->getScore();
-	scoreText->setText("Score:" + to_string(score));
 	fish->resetFish(fishStats[rand() % fishStats.size()]);
 	changeGameState(new Fishing(player, fish));
 }
 
+void fishCaught() {
+	changeGameState(new FishCaught(player, fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
+}
+
+void onClick() {
+	currentState->onClick(Input::getMouse().x, Input::getMouse().y);
+}
+
 void reelIn() {
-	// TODO make reel in threshold depend on fish type
+	// TODO make reel in threshold depend on how long it takes the player to start reeling in
 	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight), 40, rand() % 25 + 10));
 }
 
@@ -61,16 +65,17 @@ void initialize() {
 	player = new Player(glm::vec2(400, 250), glm::vec2(0), 
 		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerSpeed);
 
+	//changeGameState(new FishCaught(player, fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
 	changeGameState(new Fishing(player, fish));
 
 	EventSystem::subscribeFunction("ReelIn", reelIn);
 	EventSystem::subscribeFunction("StartFishing", startFishing);
+	EventSystem::subscribeFunction("FishCaught", fishCaught);
 	EventSystem::subscribeFunction("GameOver", startFishing);
 	EventSystem::subscribeFunction("GameOver", resetScore);
+	EventSystem::subscribeFunction("OnMouseClick", onClick);
 
-	scoreText = new TextRenderer(glm::vec2(0, 750), 
-		new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), 27, 32);
-	scoreText->setText("Score:" + to_string(score));
+	ScoreManager::init();
 }
 
 void update(float deltaTime) {
@@ -82,7 +87,6 @@ void render() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	currentState->render();
-	scoreText->render();
 
 	//Menjamo bafer
 	glutSwapBuffers();

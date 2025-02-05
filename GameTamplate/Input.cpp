@@ -1,6 +1,5 @@
 #include "Input.h"
 
-
 bool Input::_keyStates[256] = { false };
 bool Input::_keyDownDected[256] = { false };
 bool Input::_isCursorLocked = false;
@@ -58,7 +57,7 @@ void Input::keyboardUp(unsigned char key, int x, int y) {
 
 void Input::mouseClick(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        std::cout << "Cursor Position: x = " << x << ", y = " << y << std::endl;
+        EventSystem::invokeChannel("OnMouseClick");
     }
 }
 
@@ -100,4 +99,4 @@ void Input::updateCursorLock() {
     }
 }
 
-glm::vec3& Input::getMouse() { return _deltaPosition; }
+glm::vec3 Input::getMouse() { return glm::vec3(_mousePosition.x, (800 - _mousePosition.y), _mousePosition.z); }

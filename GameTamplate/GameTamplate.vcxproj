@@ -145,10 +145,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Dictionary.cpp" />
     <ClCompile Include="DictionaryItem.cpp" />
     <ClCompile Include="EventSystem.cpp" />
     <ClCompile Include="Fish.cpp" />
+    <ClCompile Include="FishCaught.cpp" />
     <ClCompile Include="Fishing.cpp" />
     <ClCompile Include="FishStats.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -158,14 +160,17 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="ReelingIn.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="DictionaryItem.h" />
     <ClInclude Include="EventSystem.h" />
     <ClInclude Include="Fish.h" />
+    <ClInclude Include="FishCaught.h" />
     <ClInclude Include="Fishing.h" />
     <ClInclude Include="FishStats.h" />
     <ClInclude Include="GameObject.h" />
@@ -175,6 +180,7 @@
     <ClInclude Include="Primitives.h" />
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="ReelingIn.h" />
+    <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextRenderer.h" />
   </ItemGroup>

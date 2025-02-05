@@ -1,4 +1,6 @@
 #pragma once
+#include "EventSystem.h"
+
 #include <stdlib.h>
 #include <freeglut.h>
 #include <glm.hpp>
@@ -29,5 +31,5 @@ public:
     static bool isAnyKeyPressed();
     static void update();
     static void updateCursorLock();
-    static glm::vec3& getMouse();
+    static glm::vec3 getMouse();
 };

@@ -87,8 +87,17 @@
     <ClCompile Include="ProgressBar.cpp">
       <Filter>Source Files\GameObjects\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\GameObjects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="FishCaught.cpp">
+      <Filter>Source Files\GameStates</Filter>
+    </ClCompile>
     <ClCompile Include="FishStats.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreManager.cpp">
+      <Filter>Source Files\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,8 +146,17 @@
     <ClInclude Include="TextRenderer.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\GameObjects\UI</Filter>
+    </ClInclude>
     <ClInclude Include="FishStats.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="FishCaught.h">
+      <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreManager.h">
+      <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

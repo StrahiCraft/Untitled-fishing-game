@@ -30,6 +30,7 @@ void ReelingIn::onStateUpdate(float deltaTime)
 	_player->update(deltaTime);
 	_progressBar->update(deltaTime);
 	_fish->setPosition(_player->getPosition());
+	_fish->setRotation(_player->getRotation() + 90);
 
 	for (int i = 0; i < _bombCount; i++) {
 		_bombs[i]->update(deltaTime);
@@ -47,7 +48,10 @@ void ReelingIn::render()
 		_bombs[i]->render();
 	}
 	_progressBar->render();
+	ScoreManager::render();
 }
+
+void ReelingIn::onStateExit(){}
 
 void ReelingIn::checkForBombCollision() {
 	for (Bomb* bomb : _bombs) {
@@ -70,8 +74,7 @@ void ReelingIn::handleScoreCalculation(float deltaTime) {
 	_reelInScore += deltaTime;
 
 	if (_reelInScore >= _reelInThreshold) {
-		// TODO go to capture animation and then go back to fishing state
-		EventSystem::invokeChannel("StartFishing");
+		EventSystem::invokeChannel("FishCaught");
 		cout << "Fish caught!" << endl;
 	}
 }

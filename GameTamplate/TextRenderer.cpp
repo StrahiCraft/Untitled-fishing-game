@@ -18,6 +18,8 @@ void TextRenderer::setText(string newText) {
 }
 
 void TextRenderer::render() {
+	glPushMatrix();
+
 	glTranslatef(_textPosition.x, _textPosition.y, 0.0f);
 
 	for (int i = 0; i < _characterSprites.size(); i++) {

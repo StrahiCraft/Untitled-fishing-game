@@ -22,6 +22,8 @@ public:
     float getGoalCircleSize();
     int getScore();
     float getWeight();
+    string getName();
+    string getDescription();
 
     void update(float deltaTime);
     void render();

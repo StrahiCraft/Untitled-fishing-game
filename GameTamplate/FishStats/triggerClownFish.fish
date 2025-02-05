@@ -5,3 +5,4 @@ Sprites/Fish/triggerClownFish.png
 90
 100
 7
+TRIGGER_CLOWN_FISH

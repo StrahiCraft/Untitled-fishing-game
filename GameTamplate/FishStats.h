@@ -20,6 +20,8 @@ private:
 	float _minWeight;
 	float _maxWeight;
 
+	string _fishName;
+	string _fishDescription;
 public:
 	FishStats(string filePath);
 
@@ -30,5 +32,7 @@ public:
 	float getCaptureRate();
 	float getGoalCircleSize();
 	int getScore();
+	string getName();
+	string getDescription();
 };
 

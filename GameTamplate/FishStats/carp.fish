@@ -5,3 +5,4 @@ Sprites/Fish/carp.png
 75
 200
 5
+CARP
