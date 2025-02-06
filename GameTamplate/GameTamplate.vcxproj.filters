@@ -99,6 +99,9 @@
     <ClCompile Include="ScoreManager.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
@@ -156,6 +159,9 @@
       <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="ScoreManager.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>

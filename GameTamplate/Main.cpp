@@ -1,6 +1,7 @@
 #include "Fishing.h"
 #include "ReelingIn.h"
 #include "FishCaught.h"
+#include "AudioManager.h"
 
 #include <time.h>
 
@@ -76,6 +77,9 @@ void initialize() {
 	EventSystem::subscribeFunction("OnMouseClick", onClick);
 
 	ScoreManager::init();
+	AudioManager::init();
+	AudioManager::addSound("test", "Audio/test.wav");
+	AudioManager::playSound("test");
 }
 
 void update(float deltaTime) {
