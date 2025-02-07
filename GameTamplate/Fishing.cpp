@@ -10,6 +10,8 @@ void Fishing::onStateEnter() {
 	_player->setSpeedDebuff(0);
 	_maxFishingTime = 30;
 	_remainingFishingTime = _maxFishingTime;
+
+	_ring = new Ring(glm::vec2(200), glm::vec2(0));
 }
 
 void Fishing::onStateUpdate(float deltaTime) {
@@ -25,6 +27,11 @@ void Fishing::onStateUpdate(float deltaTime) {
 	_progressBar->updateProgressBar(_remainingFishingTime / _maxFishingTime);
 	_progressBar->update(deltaTime);
 	_player->update(deltaTime);
+	_ring->update(deltaTime);
+
+	if (glm::distance(_player->getPosition(), _ring->getPosition()) <= 35) {
+		_ring->onPickup();
+	}
 
 	if (_remainingFishingTime < 0) {
 		EventSystem::invokeChannel("GameOver");
@@ -36,6 +43,7 @@ void Fishing::onStateExit() {}
 void Fishing::render() {
 	_fish->render();
 	_player->render();
+	_ring->render();
 	_progressBar->render();
 	ScoreManager::render();
 }

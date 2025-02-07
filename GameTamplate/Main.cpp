@@ -33,7 +33,7 @@ void setupAudio() {
 	AudioManager::addSong("reelingIn", "Audio/reelingIn.mp3");
 	AudioManager::addSound("fishCaught", "Audio/fishCaught.mp3");
 	AudioManager::addSound("explode", "Audio/explode.mp3");
-	AudioManager::addSound("fishCapturing", "Audio/fishCapturing.wav");
+	AudioManager::addSound("ring", "Audio/ring.wav");
 }
 
 void changeGameState(GameState* newState) {

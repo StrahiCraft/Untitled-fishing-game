@@ -40,6 +40,11 @@ void Fish::update(float dt) {
 		return;
 	}
 
+	if(_position.x < -50 || _position.x > 850 ||
+		_position.y < -50 || _position.y > 850) {
+		randomizeDestination();
+	}
+
 	if (_velocity.x < 0) {
 		_sprite->setSpriteFlip(glm::vec2(0, 1));
 	}

@@ -161,9 +161,11 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="ReelingIn.cpp" />
+    <ClCompile Include="Ring.cpp" />
     <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
   </ItemGroup>
@@ -181,10 +183,12 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Pickup.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Primitives.h" />
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="ReelingIn.h" />
+    <ClInclude Include="Ring.h" />
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextRenderer.h" />

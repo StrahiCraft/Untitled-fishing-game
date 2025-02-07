@@ -43,6 +43,12 @@
     <Filter Include="Header Files\GameObjects\UI">
       <UniqueIdentifier>{950bcde1-8e7b-4274-bda6-a03f6d92a2b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameObjects\Pickups">
+      <UniqueIdentifier>{c6378813-fa9c-466a-90c6-dc5d6aabf317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Pickups">
+      <UniqueIdentifier>{bf3e8d5e-f0af-4b8b-874c-bb6ce4d20155}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -101,6 +107,12 @@
     </ClCompile>
     <ClCompile Include="AudioManager.cpp">
       <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Pickup.cpp">
+      <Filter>Source Files\GameObjects\Pickups</Filter>
+    </ClCompile>
+    <ClCompile Include="Ring.cpp">
+      <Filter>Source Files\GameObjects\Pickups</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +175,12 @@
     </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Pickup.h">
+      <Filter>Header Files\GameObjects\Pickups</Filter>
+    </ClInclude>
+    <ClInclude Include="Ring.h">
+      <Filter>Header Files\GameObjects\Pickups</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
