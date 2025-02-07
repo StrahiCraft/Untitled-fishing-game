@@ -12,6 +12,9 @@ FishCaught::FishCaught(Player* player, Fish* fish, Sprite* fontSprite) : GameSta
 }
 
 void FishCaught::onStateEnter() {
+	AudioManager::stopMusic();
+	AudioManager::playSound("fishCaught");
+
 	_background = new Sprite("Sprites/fishCaughtMenu.png", glm::vec2(768), 1, glm::vec2(1), true);
 
 	_continueButton->setEvent("StartFishing");

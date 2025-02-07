@@ -112,5 +112,6 @@ void Fish::increaseCaptureScore(float dt) {
 
 	if (_currentCircleSize <= 0) {
 		_currentCircleSize = 0;
+		return;
 	}
 }

@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "EventSystem.h"
 #include "FishStats.h"
+#include "AudioManager.h"
 
 class Fish :
     public GameObject

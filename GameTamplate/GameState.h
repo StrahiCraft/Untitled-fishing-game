@@ -4,6 +4,7 @@
 #include "Fish.h"
 #include "Button.h"
 #include "ScoreManager.h"
+#include "AudioManager.h"
 
 class GameState
 {

@@ -1,4 +1,4 @@
-
+#pragma once
 #include "GameObject.h"
 class ProgressBar :
     public GameObject
@@ -23,4 +23,5 @@ public:
     void drawProgressLayer(float multiplier, glm::vec3 color);
     void decayProgressBar(float newProgress);
     void setProgress(float progress);
+    void changeDecayColor(glm::vec3 newColor);
 };

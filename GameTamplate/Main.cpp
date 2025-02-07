@@ -1,7 +1,6 @@
 #include "Fishing.h"
 #include "ReelingIn.h"
 #include "FishCaught.h"
-#include "AudioManager.h"
 
 #include <time.h>
 
@@ -28,6 +27,15 @@ void resetScore() {
 	ScoreManager::setScore(0);
 }
 
+void setupAudio() {
+	AudioManager::init();
+	AudioManager::addSong("fishing", "Audio/fishing.mp3");
+	AudioManager::addSong("reelingIn", "Audio/reelingIn.mp3");
+	AudioManager::addSound("fishCaught", "Audio/fishCaught.mp3");
+	AudioManager::addSound("explode", "Audio/explode.mp3");
+	AudioManager::addSound("fishCapturing", "Audio/fishCapturing.wav");
+}
+
 void changeGameState(GameState* newState) {
 	if (currentState != NULL) {
 		currentState->onStateExit();
@@ -50,8 +58,17 @@ void onClick() {
 }
 
 void reelIn() {
-	// TODO make reel in threshold depend on how long it takes the player to start reeling in
-	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight), 40, rand() % 25 + 10));
+	Fishing* fishing = (Fishing*)currentState;
+	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight), fishing->getRemainigFishingTime(), 45));
+}
+
+void setupEvents() {
+	EventSystem::subscribeFunction("ReelIn", reelIn);
+	EventSystem::subscribeFunction("StartFishing", startFishing);
+	EventSystem::subscribeFunction("FishCaught", fishCaught);
+	EventSystem::subscribeFunction("GameOver", startFishing);
+	EventSystem::subscribeFunction("GameOver", resetScore);
+	EventSystem::subscribeFunction("OnMouseClick", onClick);
 }
 
 void initialize() {
@@ -66,20 +83,11 @@ void initialize() {
 	player = new Player(glm::vec2(400, 250), glm::vec2(0), 
 		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerSpeed);
 
-	//changeGameState(new FishCaught(player, fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
-	changeGameState(new Fishing(player, fish));
-
-	EventSystem::subscribeFunction("ReelIn", reelIn);
-	EventSystem::subscribeFunction("StartFishing", startFishing);
-	EventSystem::subscribeFunction("FishCaught", fishCaught);
-	EventSystem::subscribeFunction("GameOver", startFishing);
-	EventSystem::subscribeFunction("GameOver", resetScore);
-	EventSystem::subscribeFunction("OnMouseClick", onClick);
-
+	setupEvents();
+	setupAudio();
 	ScoreManager::init();
-	AudioManager::init();
-	AudioManager::addSound("test", "Audio/test.wav");
-	AudioManager::playSound("test");
+
+	changeGameState(new Fishing(player, fish));
 }
 
 void update(float deltaTime) {

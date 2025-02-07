@@ -44,5 +44,4 @@ void Bomb::render()
 void Bomb::resetBomb()
 {
 	setPosition(glm::vec2(rand() % (int)_windowSize.x, _windowSize.y + 100 + rand() % 800));
-	// maybe play explosion sound
 }
