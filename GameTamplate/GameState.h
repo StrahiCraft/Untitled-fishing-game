@@ -16,7 +16,7 @@ protected:
 public:
 	GameState(Player* player, Fish* fish);
 	virtual void onStateEnter() = 0;
-	virtual void onStateUpdate(float deltaTime) = 0;
+	virtual void onStateUpdate() = 0;
 	virtual void onStateExit() = 0;
 	virtual void render() = 0;
 

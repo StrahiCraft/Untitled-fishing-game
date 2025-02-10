@@ -29,6 +29,7 @@ void AudioManager::playSound(string sfxName) {
 	FMOD::Channel* channel;
 
 	result = _audioSystem->playSound(sound, nullptr, false, &channel);
+	channel->setVolume(0.24f);
 
 	debugResult(result);
 }
@@ -40,6 +41,7 @@ void AudioManager::playSound(string sfxName, float pitch) {
 
 	result = _audioSystem->playSound(sound, nullptr, false, &channel);
 	channel->setPitch(pitch);
+	channel->setVolume(0.24f);
 
 	debugResult(result);
 }
@@ -59,6 +61,7 @@ void AudioManager::playSong(string songName) {
 	FMOD::Sound* song = _music.getValue(songName);
 
 	result = _audioSystem->playSound(song, nullptr, false, &_musicChannel);
+	_musicChannel->setVolume(0.24f);
 
 	debugResult(result);
 }

@@ -18,13 +18,13 @@ ProgressBar::ProgressBar(glm::vec2 position, glm::vec2 scale,
 	_fastDecayTimer = 1;
 }
 
-void ProgressBar::update(float deltaTime) {
+void ProgressBar::update() {
 	if (_fastDecayTimer >= 1) {
 		_fastDecayTimer = 1;
 		return;
 	}
 
-	_fastDecayTimer += deltaTime;
+	_fastDecayTimer += Time::getRealTime();
 	_fastDecayProgress = _fastDecayStart + (_fastDecayGoal - _fastDecayStart) * _fastDecayTimer;
 }
 

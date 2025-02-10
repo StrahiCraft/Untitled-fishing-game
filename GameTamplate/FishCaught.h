@@ -13,7 +13,7 @@ private:
 public:
     FishCaught(Player* player, Fish* fish, Sprite* fontSprite);
     void onStateEnter();
-    void onStateUpdate(float deltaTime);
+    void onStateUpdate();
     void onStateExit();
     void render();
 };

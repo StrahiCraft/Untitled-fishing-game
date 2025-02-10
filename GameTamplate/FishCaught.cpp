@@ -33,7 +33,7 @@ void FishCaught::onStateEnter() {
 	_buttons.push_back(*_continueButton);
 }
 
-void FishCaught::onStateUpdate(float deltaTime) {
+void FishCaught::onStateUpdate() {
 
 }
 

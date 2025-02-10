@@ -5,11 +5,11 @@ Ring::Ring(glm::vec2 position, glm::vec2 velocity) : Pickup(position, velocity) 
 	_sprite->setAnimationDelay(0.05f);
 }
 
-void Ring::update(float deltaTime) {
+void Ring::update() {
 	if (!_active) {
 		return;
 	}
-	_sprite->update(deltaTime);
+	_sprite->update(Time::getDeltaTime());
 	move();
 }
 

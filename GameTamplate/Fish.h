@@ -20,16 +20,17 @@ private:
 public:
     Fish(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 windowSize);
 
+    FishStats getStats();
     float getGoalCircleSize();
     int getScore();
     float getWeight();
     string getName();
     string getDescription();
 
-    void update(float deltaTime);
+    void update();
     void render();
 
-    void increaseCaptureScore(float dt);
+    void increaseCaptureScore(int multiplier);
     void resetFish(string statsFilePath);
 private:
     void randomizePosition();

@@ -10,13 +10,13 @@ Bomb::Bomb(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 wi
 	_windowSize = windowSize;
 }
 
-void Bomb::update(float deltaTime)
+void Bomb::update()
 {
 	if (!_active) {
 		return;
 	}
 
-	setPosition(getPosition() + _velocity * deltaTime);
+	setPosition(getPosition() + _velocity * Time::getDeltaTime());
 
 	if (getPosition().y < -100) {
 		resetBomb();

@@ -1,14 +1,14 @@
-﻿  Ring.cpp
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
-          with
-          [
-              T=float
-          ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
-          with
-          [
-              T=float
-          ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(16,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+﻿  AudioManager.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(50,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(49,1): message : while compiling class template member function 'int Dictionary<std::string,FMOD::Sound *>::getItemIndex(K)'
+          with
+          [
+              K=std::string
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(38,16): message : see the first reference to 'Dictionary<std::string,FMOD::Sound *>::getItemIndex' in 'Dictionary<std::string,FMOD::Sound *>::getValue'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp(28,21): message : see the first reference to 'Dictionary<std::string,FMOD::Sound *>::getValue' in 'AudioManager::playSound'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(4,32): message : while compiling class template member function 'Dictionary<std::string,FMOD::Sound *>::Dictionary(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp(5,48): message : see the first reference to 'Dictionary<std::string,FMOD::Sound *>::Dictionary' in 'void __cdecl `dynamic initializer for 'private: static Dictionary<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,FMOD::Sound *> AudioManager::_soundEffects''(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp(5,34): message : see reference to class template instantiation 'Dictionary<std::string,FMOD::Sound *>' being compiled
   GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Debug\GameTamplate.exe

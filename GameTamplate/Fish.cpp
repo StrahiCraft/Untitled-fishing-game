@@ -6,6 +6,11 @@ Fish::Fish(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 wi
 	_currentFishingCircle = primitive::createCircle(glm::vec3(0), glm::vec3(1), 32);
 }
 
+FishStats Fish::getStats()
+{
+	return *_fishStats;
+}
+
 float Fish::getGoalCircleSize()
 {
 	return _fishStats->getGoalCircleSize();
@@ -31,7 +36,7 @@ string Fish::getDescription()
 	return _fishStats->getDescription();
 }
 
-void Fish::update(float dt) {
+void Fish::update() {
 	if (!_active) {
 		return;
 	}
@@ -65,7 +70,7 @@ void Fish::update(float dt) {
 		return;
 	}
 
-	_position += _velocity * dt * _fishStats->getFishSpeed();
+	_position += _velocity * Time::getDeltaTime() * _fishStats->getFishSpeed();
 }
 
 void Fish::render() {
@@ -112,8 +117,8 @@ void Fish::resetFish(string statsFilePath) {
 	setSprite(_fishStats->getFishSprite());
 }
 
-void Fish::increaseCaptureScore(float dt) {
-	_currentCircleSize += dt * _fishStats->getCaptureRate();
+void Fish::increaseCaptureScore(int multiplier) {
+	_currentCircleSize += Time::getRealTime() * _fishStats->getCaptureRate() * multiplier;
 
 	if (_currentCircleSize <= 0) {
 		_currentCircleSize = 0;

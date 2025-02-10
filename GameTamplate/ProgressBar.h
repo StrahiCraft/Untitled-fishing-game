@@ -17,7 +17,7 @@ public:
     ProgressBar();
     ProgressBar(glm::vec2 position, glm::vec2 scale,
         glm::vec3 progressBarColor, glm::vec3 backgroundColor, glm::vec3 fastDecayColor);
-    void update(float deltaTime);
+    void update();
     void updateProgressBar(float newProgress);
     void render();
     void drawProgressLayer(float multiplier, glm::vec3 color);

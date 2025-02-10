@@ -150,6 +150,7 @@
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ChaosControl.cpp" />
     <ClCompile Include="Dictionary.cpp" />
     <ClCompile Include="DictionaryItem.cpp" />
     <ClCompile Include="EventSystem.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="FishStats.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Hitbox.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Pickup.cpp" />
@@ -168,11 +170,13 @@
     <ClCompile Include="Ring.cpp" />
     <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="ChaosControl.h" />
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="DictionaryItem.h" />
     <ClInclude Include="EventSystem.h" />
@@ -182,6 +186,7 @@
     <ClInclude Include="FishStats.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="Hitbox.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Pickup.h" />
     <ClInclude Include="Player.h" />
@@ -192,6 +197,7 @@
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextRenderer.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

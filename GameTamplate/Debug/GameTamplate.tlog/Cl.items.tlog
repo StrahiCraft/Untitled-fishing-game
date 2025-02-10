@@ -1,6 +1,7 @@
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\AudioManager.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Bomb.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Bomb.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Button.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Button.obj
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ChaosControl.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\ChaosControl.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Dictionary.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\DictionaryItem.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\DictionaryItem.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\EventSystem.obj
@@ -10,6 +11,7 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.cpp;E:\Fakultet\
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\FishStats.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\FishStats.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\GameObject.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\GameObject.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\GameState.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\GameState.obj
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Hitbox.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Hitbox.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Input.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Input.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Main.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Pickup.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Pickup.obj
@@ -19,3 +21,4 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ReelingIn.cpp;E:\Fakulte
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Ring.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Ring.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\ScoreManager.obj
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\TextRenderer.obj
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.cpp;E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Debug\Time.obj

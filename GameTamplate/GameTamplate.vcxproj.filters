@@ -114,6 +114,15 @@
     <ClCompile Include="Ring.cpp">
       <Filter>Source Files\GameObjects\Pickups</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ChaosControl.cpp">
+      <Filter>Source Files\GameObjects\Pickups</Filter>
+    </ClCompile>
+    <ClCompile Include="Hitbox.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
@@ -181,6 +190,15 @@
     </ClInclude>
     <ClInclude Include="Ring.h">
       <Filter>Header Files\GameObjects\Pickups</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ChaosControl.h">
+      <Filter>Header Files\GameObjects\Pickups</Filter>
+    </ClInclude>
+    <ClInclude Include="Hitbox.h">
+      <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

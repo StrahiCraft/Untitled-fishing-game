@@ -7,6 +7,7 @@ ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float ree
 	_reelInScore = reelInScore;
 	_bombCount = bombCount;
 	_player->setSpeedDebuff(fish->getWeight());
+	Time::setTimeScale(1);
 }
 
 void ReelingIn::onStateEnter()
@@ -26,21 +27,21 @@ void ReelingIn::onStateEnter()
 	}
 }
 
-void ReelingIn::onStateUpdate(float deltaTime)
+void ReelingIn::onStateUpdate()
 {
 	_progressBar->updateProgressBar(_reelInScore / _reelInThreshold);
 	checkForBombCollision();
 
-	_player->update(deltaTime);
-	_progressBar->update(deltaTime);
+	_player->update();
+	_progressBar->update();
 	_fish->setPosition(_player->getPosition());
 	_fish->setRotation(_player->getRotation() + 90);
 
 	for (int i = 0; i < _bombCount; i++) {
-		_bombs[i]->update(deltaTime);
+		_bombs[i]->update();
 	}
 
-	handleScoreCalculation(deltaTime);
+	handleScoreCalculation();
 }
 
 void ReelingIn::render()
@@ -69,7 +70,7 @@ void ReelingIn::checkForBombCollision() {
 	}
 }
 
-void ReelingIn::handleScoreCalculation(float deltaTime) {
+void ReelingIn::handleScoreCalculation() {
 	if (_reelInScore < 0) {
 		// TODO go to game over screen
 		EventSystem::invokeChannel("GameOver");
@@ -77,7 +78,7 @@ void ReelingIn::handleScoreCalculation(float deltaTime) {
 		return;
 	}
 
-	_reelInScore += deltaTime;
+	_reelInScore += Time::getDeltaTime();
 
 	if (_reelInScore >= _reelInThreshold) {
 		EventSystem::invokeChannel("FishCaught");

@@ -1,6 +1,7 @@
 #pragma once
 #include "Sprite.h"
 #include "Primitives.h"
+#include "Time.h"
 
 #include <gtc/type_ptr.hpp>
 #include <gtc/matrix_transform.hpp>
@@ -66,12 +67,12 @@ public:
 
 	float getVelocityAngle();
 
-	virtual void update(float deltaTime) {
+	virtual void update() {
 		if (_active) {
 			if (_sprite) {
-				_sprite->update(deltaTime);
+				_sprite->update(Time::getDeltaTime());
 			}
-			_position += _velocity * deltaTime;
+			_position += _velocity * Time::getDeltaTime();
 			checkEdges();
 		}
 	}

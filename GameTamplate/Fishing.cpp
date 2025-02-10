@@ -11,26 +11,34 @@ void Fishing::onStateEnter() {
 	_maxFishingTime = 30;
 	_remainingFishingTime = _maxFishingTime;
 
-	_ring = new Ring(glm::vec2(200), glm::vec2(0));
+	_hitbox = new Hitbox(glm::vec2(200), glm::vec2(64), _player);
+
+	resetPickup();
 }
 
-void Fishing::onStateUpdate(float deltaTime) {
+void Fishing::onStateUpdate() {
+
+	if (!_pickup->getActive()) {
+		resetPickup();
+	}
+
 	if (glm::distance(_player->getPosition(), _fish->getPosition()) <= _fish->getGoalCircleSize() + 16) {
-		_fish->increaseCaptureScore(deltaTime);
+		_fish->increaseCaptureScore(1);
 	}
 	else {	
-		_remainingFishingTime -= deltaTime;
-		_fish->increaseCaptureScore(-deltaTime);
+		_remainingFishingTime -= Time::getDeltaTime();
+		_fish->increaseCaptureScore(-1);
 	}
 
-	_fish->update(deltaTime);
+	_fish->update();
 	_progressBar->updateProgressBar(_remainingFishingTime / _maxFishingTime);
-	_progressBar->update(deltaTime);
-	_player->update(deltaTime);
-	_ring->update(deltaTime);
+	_progressBar->update();
+	_hitbox->update();
+	_player->update();
+	_pickup->update();
 
-	if (glm::distance(_player->getPosition(), _ring->getPosition()) <= 35) {
-		_ring->onPickup();
+	if (glm::distance(_player->getPosition(), _pickup->getPosition()) <= _pickup->getSize()) {
+		_pickup->onPickup();
 	}
 
 	if (_remainingFishingTime < 0) {
@@ -43,11 +51,29 @@ void Fishing::onStateExit() {}
 void Fishing::render() {
 	_fish->render();
 	_player->render();
-	_ring->render();
+	_pickup->render();
+	_hitbox->render();
 	_progressBar->render();
 	ScoreManager::render();
 }
 
 float Fishing::getRemainigFishingTime() {
 	return _remainingFishingTime;
+}
+
+void Fishing::resetPickup() {
+	// change to the number of pickups implemented
+	int pickupTypeCount = 2;
+
+	switch (rand() % pickupTypeCount) {
+	case 0:
+		_pickup = new Ring(glm::vec2(-499 + rand() % 500, 50 + rand() % 700), glm::vec2(50 + rand() % 200, -1 + rand() % 2));
+		break;
+	case 1:
+		_pickup = new ChaosControl(glm::vec2(-499 + rand() % 500, 50 + rand() % 700), glm::vec2(50 + rand() % 200, -1 + rand() % 2));
+		break;
+	default:
+		_pickup = new Ring(glm::vec2(-499 + rand() % 500, 50 + rand() % 700), glm::vec2(50 + rand() % 200, -1 + rand() % 2));
+		break;
+	}
 }

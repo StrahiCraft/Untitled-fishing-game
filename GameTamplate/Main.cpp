@@ -16,6 +16,7 @@ Player* player;
 float playerSpeed = 500;
 
 GameState* currentState;
+vector<FishStats> fishCaughtStats;
 
 vector<string> fishStats = {
 	"FishStats/carp.fish",
@@ -23,8 +24,25 @@ vector<string> fishStats = {
 	"FishStats/triggerClownFish.fish",
 };
 
+void writeFishFile() {
+	ofstream file("fishCaught.txt");
+
+	file << "FISH CAUGHT: " << fishCaughtStats.size() << "\n\n";
+
+	for (FishStats fishStats : fishCaughtStats) {
+		file << "NAME: " << fishStats.getName() << "\n";
+		file << "WEIGHT: " << fishStats.getWeight() << "KG\n";
+		file << "SCORE GAIN: " << fishStats.getScore() << "\n";
+		file << "\n";
+	}
+
+	file.close();
+}
+
 void resetScore() {
 	ScoreManager::setScore(0);
+	fishCaughtStats.clear();
+	writeFishFile();
 }
 
 void setupAudio() {
@@ -34,6 +52,7 @@ void setupAudio() {
 	AudioManager::addSound("fishCaught", "Audio/fishCaught.mp3");
 	AudioManager::addSound("explode", "Audio/explode.mp3");
 	AudioManager::addSound("ring", "Audio/ring.wav");
+	AudioManager::addSound("chaosControl", "Audio/chaosControl.wav");
 }
 
 void changeGameState(GameState* newState) {
@@ -49,7 +68,12 @@ void startFishing() {
 	changeGameState(new Fishing(player, fish));
 }
 
+
 void fishCaught() {
+	fishCaughtStats.push_back(fish->getStats());
+
+	writeFishFile();
+
 	changeGameState(new FishCaught(player, fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
 }
 
@@ -90,8 +114,8 @@ void initialize() {
 	changeGameState(new Fishing(player, fish));
 }
 
-void update(float deltaTime) {
-	currentState->onStateUpdate(deltaTime);
+void update() {
+	currentState->onStateUpdate();
 }
 
 void render() {
@@ -109,7 +133,9 @@ void gameLoop(void) {
 	_deltaTime = (float)(currentTime - _previousTime) / 1000;
 	_previousTime = currentTime;
 
-	update(_deltaTime);
+	Time::updateTime(_deltaTime);
+
+	update();
 	render();
 
 	glutPostRedisplay();

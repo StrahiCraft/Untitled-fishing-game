@@ -9,7 +9,7 @@ public:
     Bomb();
     Bomb(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 windowSize);
 
-    void update(float deltaTime);
+    void update();
     void render();
     void resetBomb();
 };

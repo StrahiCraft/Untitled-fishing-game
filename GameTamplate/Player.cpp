@@ -5,9 +5,9 @@ Player::Player(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, float ac
 	_speed = acceleration;
 }
 
-void Player::update(float deltaTime) {
+void Player::update() {
 	handleInput();
-	handleMovement(deltaTime);
+	handleMovement();
 
 	if (_velocity != glm::vec2(0)) {
 		_rotation = getVelocityAngle();
@@ -33,7 +33,7 @@ void Player::handleInput() {
 	}
 }
 
-void Player::handleMovement(float deltaTime) {
+void Player::handleMovement() {
 	if (_newMovement != _currentMovement) {
 		_currentMovement = _newMovement;
 		_velocityLerp = 0;
@@ -41,13 +41,13 @@ void Player::handleMovement(float deltaTime) {
 	}
 
 	_velocity = (_startVelocity) * (1.0f - _velocityLerp) + (_currentMovement) * _velocityLerp;
-	_velocityLerp += deltaTime;
+	_velocityLerp += Time::getRealTime();
 
 	if (_velocityLerp >= 1) {
 		_velocityLerp = 1;
 	}
 
-	setPosition(getPosition() + _velocity * (_speed - _speedDebuff) * deltaTime);
+	setPosition(getPosition() + _velocity * (_speed - _speedDebuff) * Time::getRealTime());
 }
 
 void Player::setSpeedDebuff(float fishWeight) {
