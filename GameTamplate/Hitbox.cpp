@@ -2,7 +2,7 @@
 
 Hitbox::Hitbox(glm::vec2 position, glm::vec2 size, Player* player) {
 	setPosition(position);
-	_hitboxSize = size;
+	_hitboxSize = size + glm::vec2(5);
 	_playerReference = player;
 }
 

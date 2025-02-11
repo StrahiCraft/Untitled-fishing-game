@@ -1,12 +1,13 @@
 #include "ReelingIn.h"
 
-ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInScore, int bombCount) : GameState(player, fish)
+ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInScore, int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites) : GameState(player, fish)
 {
 	_windowSize = windowSize;
 	_reelInThreshold = 60;
 	_reelInScore = reelInScore;
 	_bombCount = bombCount;
 	_player->setSpeedDebuff(fish->getWeight());
+	_stoneSprites = stoneSprites;
 	Time::setTimeScale(1);
 }
 
@@ -29,6 +30,7 @@ void ReelingIn::onStateEnter()
 
 void ReelingIn::onStateUpdate()
 {
+	_stoneSpriteOffset += Time::getDeltaTime() * -150;
 	_progressBar->updateProgressBar(_reelInScore / _reelInThreshold);
 	checkForBombCollision();
 
@@ -46,6 +48,12 @@ void ReelingIn::onStateUpdate()
 
 void ReelingIn::render()
 {
+	for (int i = 0; i < _stoneSprites.getItemCount(); i++) {
+		glPushMatrix();
+		glTranslatef(_stoneSprites.getKey(i).x * 64 - 32, _stoneSprites.getKey(i).y * 64 - 32 + _stoneSpriteOffset, 0);
+		_stoneSprites.getValue(i)->render();
+		glPopMatrix();
+	}
 	_player->render();
 	_fish->render();
 

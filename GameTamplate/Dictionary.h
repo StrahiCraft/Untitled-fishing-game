@@ -15,6 +15,9 @@ public:
 	void addItem(K key, V value);
 	void removeItem(K key);
 	void setValue(K key, V newValue);
+	int getItemCount();
 	V getValue(K key);
+	V getValue(int index);
+	K getKey(int index);
 	bool containsKey(K key);
 };

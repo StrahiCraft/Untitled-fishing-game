@@ -22,6 +22,7 @@ vector<string> fishStats = {
 	"FishStats/carp.fish",
 	"FishStats/clownFish.fish",
 	"FishStats/triggerClownFish.fish",
+	"FishStats/tinCan.fish",
 };
 
 void writeFishFile() {
@@ -83,7 +84,8 @@ void onClick() {
 
 void reelIn() {
 	Fishing* fishing = (Fishing*)currentState;
-	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight), fishing->getRemainigFishingTime(), 45));
+	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight),
+		fishing->getRemainigFishingTime(), 45, fishing->getStoneSprites()));
 }
 
 void setupEvents() {
@@ -168,7 +170,7 @@ int main(int argc, char** argv) {
 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(_windowWidth, _windowHeight);
-	glutInitWindowPosition(50, 50);
+	glutInitWindowPosition(500, 100);
 	glutCreateWindow("CS232 Projekat");
 
 	start();

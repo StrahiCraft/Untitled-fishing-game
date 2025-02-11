@@ -112,6 +112,8 @@ public:
 protected:
 	void drawCircle(float radius) {
 		glDisable(GL_TEXTURE_2D);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glEnable(GL_BLEND);
 
 		glLineWidth(2.0f);
 		glColor3f(_primitive.line.r, _primitive.line.g, _primitive.line.b);
@@ -123,7 +125,7 @@ protected:
 		}
 		glEnd();
 
-		glColor3f(_primitive.fill.r, _primitive.fill.g, _primitive.fill.b);
+		glColor4f(_primitive.fill.r, _primitive.fill.g, _primitive.fill.b, 0.4f);
 		glBegin(GL_POLYGON);
 		for (int i = 0; i < segments; i++) {
 			float theta = glm::radians((i / static_cast<float>(segments)) * 360.0f);

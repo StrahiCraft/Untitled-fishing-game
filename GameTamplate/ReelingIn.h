@@ -12,8 +12,10 @@ private:
     vector<Bomb*> _bombs;
     glm::vec2 _windowSize;
     ProgressBar* _progressBar;
+    Dictionary<glm::vec2, Sprite*> _stoneSprites;
+    float _stoneSpriteOffset = 0;
 public:
-    ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInThreshold, int bombCount);
+    ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInThreshold, int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites);
     void onStateEnter();
     void onStateUpdate();
     void onStateExit();

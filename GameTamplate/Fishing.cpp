@@ -11,7 +11,16 @@ void Fishing::onStateEnter() {
 	_maxFishingTime = 30;
 	_remainingFishingTime = _maxFishingTime;
 
-	_hitbox = new Hitbox(glm::vec2(200), glm::vec2(64), _player);
+	for (int i = 0; i < 5 + rand() % 25; i++) {
+		glm::vec2 tilePosition = glm::vec2(rand() % 13, rand() % 13);
+		_stoneHitboxes.addItem(tilePosition, new Hitbox(tilePosition * glm::vec2(64), glm::vec2(64), _player));
+		_stoneSprites.addItem(tilePosition, new Sprite("Sprites/stone.png", glm::vec2(64), 1, glm::vec2(1), false));
+		for (int y = 0; y < tilePosition.y; y++) {
+			if (!_stoneSprites.containsKey(glm::vec2(tilePosition.x, y))) {
+				_stoneSprites.addItem(glm::vec2(tilePosition.x, y), new Sprite("Sprites/stoneDark.png", glm::vec2(64), 1, glm::vec2(1), false));
+			}
+		}
+	}
 
 	resetPickup();
 }
@@ -33,7 +42,11 @@ void Fishing::onStateUpdate() {
 	_fish->update();
 	_progressBar->updateProgressBar(_remainingFishingTime / _maxFishingTime);
 	_progressBar->update();
-	_hitbox->update();
+	
+	for (int i = 0; i < _stoneHitboxes.getItemCount(); i++) {
+		_stoneHitboxes.getValue(i)->update();
+	}
+
 	_player->update();
 	_pickup->update();
 
@@ -49,16 +62,26 @@ void Fishing::onStateUpdate() {
 void Fishing::onStateExit() {}
 
 void Fishing::render() {
+	for (int i = 0; i < _stoneSprites.getItemCount(); i++) {
+		glPushMatrix();
+		glTranslatef(_stoneSprites.getKey(i).x * 64 - 32, _stoneSprites.getKey(i).y * 64 - 32, 0);
+		_stoneSprites.getValue(i)->render();
+		glPopMatrix();
+	}
 	_fish->render();
 	_player->render();
 	_pickup->render();
-	_hitbox->render();
 	_progressBar->render();
 	ScoreManager::render();
 }
 
 float Fishing::getRemainigFishingTime() {
 	return _remainingFishingTime;
+}
+
+Dictionary<glm::vec2, Sprite*> Fishing::getStoneSprites()
+{
+	return _stoneSprites;
 }
 
 void Fishing::resetPickup() {

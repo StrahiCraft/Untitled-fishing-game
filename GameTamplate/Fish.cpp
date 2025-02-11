@@ -2,7 +2,7 @@
 
 Fish::Fish(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, glm::vec2 windowSize) : GameObject(pos, vel, spr) {
 	_windowSize = windowSize;
-	_goalCircle = primitive::createCircle(glm::vec3(0), glm::vec3(0.25f), 320);
+	_goalCircle = primitive::createCircle(glm::vec3(1), glm::vec3(0.25f), 320);
 	_currentFishingCircle = primitive::createCircle(glm::vec3(0), glm::vec3(1), 32);
 }
 

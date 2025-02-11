@@ -34,6 +34,12 @@ void Dictionary<K, V>::setValue(K key, V newValue) {
 }
 
 template<typename K, typename V>
+int Dictionary<K, V>::getItemCount()
+{
+	return _dictionary.size();
+}
+
+template<typename K, typename V>
 V Dictionary<K, V>::getValue(K key) {
 	int itemIndex = getItemIndex(key);
 
@@ -42,6 +48,18 @@ V Dictionary<K, V>::getValue(K key) {
 	}
 
 	return _dictionary[itemIndex].getValue();
+}
+
+template<typename K, typename V>
+V Dictionary<K, V>::getValue(int index)
+{
+	return _dictionary[index].getValue();
+}
+
+template<typename K, typename V>
+K Dictionary<K, V>::getKey(int index)
+{
+	return _dictionary[index].getKey();
 }
 
 template<typename K, typename V>

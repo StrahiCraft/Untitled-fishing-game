@@ -11,7 +11,8 @@ private:
     float _maxFishingTime;
     float _remainingFishingTime;
     Pickup* _pickup;
-    Hitbox* _hitbox;
+    Dictionary<glm::vec2, Hitbox*> _stoneHitboxes;
+    Dictionary<glm::vec2, Sprite*> _stoneSprites;
 public:
     Fishing(Player* player, Fish* fish) : GameState(player, fish){}
     void onStateEnter();
@@ -19,6 +20,7 @@ public:
     void onStateExit();
     void render();
     float getRemainigFishingTime();
+    Dictionary<glm::vec2, Sprite*> getStoneSprites();
 private:
     void resetPickup();
 };
