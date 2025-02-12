@@ -30,7 +30,7 @@ void FishCaught::onStateEnter() {
 	_fish->setScale(glm::vec2(3));
 	_fish->setRotation(45);
 	_fish->getSprite()->setSpriteFlip(glm::vec2(0));
-	_buttons.push_back(*_continueButton);
+	_buttons.push_back(_continueButton);
 }
 
 void FishCaught::onStateUpdate() {

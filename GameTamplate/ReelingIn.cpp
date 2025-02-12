@@ -86,7 +86,7 @@ void ReelingIn::handleScoreCalculation() {
 		return;
 	}
 
-	_reelInScore += Time::getDeltaTime();
+	_reelInScore += Time::getDeltaTime() * _player->getPosition().y / 300;
 
 	if (_reelInScore >= _reelInThreshold) {
 		EventSystem::invokeChannel("FishCaught");

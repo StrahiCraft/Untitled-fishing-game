@@ -24,7 +24,7 @@ Button::Button(glm::vec2 position, glm::vec2 scale, string text, Sprite* fontSpr
 	setScale(scale);
 	_buttonColor = buttonColor;
 
-	_textRenderer = new TextRenderer(glm::vec2(position.x - scale.x / 2 + 16 * (text.size() + 1), _position.y - 16),
+	_textRenderer = new TextRenderer(glm::vec2(position.x - 16 * (text.size() + 1), _position.y - 16),
 		new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), 27, 32);
 	_textRenderer->setText(text);
 

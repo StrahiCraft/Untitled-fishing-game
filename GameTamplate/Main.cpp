@@ -1,3 +1,4 @@
+#include "MainMenu.h"
 #include "Fishing.h"
 #include "ReelingIn.h"
 #include "FishCaught.h"
@@ -38,6 +39,10 @@ void writeFishFile() {
 	}
 
 	file.close();
+}
+
+void quitGame() {
+	exit(0);
 }
 
 void resetScore() {
@@ -95,6 +100,7 @@ void setupEvents() {
 	EventSystem::subscribeFunction("GameOver", startFishing);
 	EventSystem::subscribeFunction("GameOver", resetScore);
 	EventSystem::subscribeFunction("OnMouseClick", onClick);
+	EventSystem::subscribeFunction("Quit", quitGame);
 }
 
 void initialize() {
@@ -113,7 +119,8 @@ void initialize() {
 	setupAudio();
 	ScoreManager::init();
 
-	changeGameState(new Fishing(player, fish));
+	//changeGameState(new Fishing(player, fish));
+	changeGameState(new MainMenu(player, fish));
 }
 
 void update() {
@@ -165,10 +172,9 @@ void reshape(int w, int h) {
 }
 
 int main(int argc, char** argv) {
-
 	glutInit(&argc, argv);
 
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH | GLUT_BORDERLESS | GLUT_CAPTIONLESS);
 	glutInitWindowSize(_windowWidth, _windowHeight);
 	glutInitWindowPosition(500, 100);
 	glutCreateWindow("CS232 Projekat");

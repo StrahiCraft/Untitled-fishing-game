@@ -49,15 +49,24 @@
     <Filter Include="Source Files\GameObjects\Pickups">
       <UniqueIdentifier>{bf3e8d5e-f0af-4b8b-874c-bb6ce4d20155}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameStates\Fishing">
+      <UniqueIdentifier>{dc94a818-4fd3-4f45-99f8-8f269dcaa32d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\MainMenu">
+      <UniqueIdentifier>{feea9802-2007-4edb-b3cc-278a831f7aab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\Fishing">
+      <UniqueIdentifier>{7458a7d5-a9dc-48bc-aa5b-3b86447f706c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\MainMenu">
+      <UniqueIdentifier>{10688fd4-cfc2-40c7-889a-7c60751b3d49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>Source Files\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="Fishing.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -81,9 +90,6 @@
     <ClCompile Include="EventSystem.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="ReelingIn.cpp">
-      <Filter>Source Files\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="Bomb.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
@@ -95,9 +101,6 @@
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Source Files\GameObjects\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="FishCaught.cpp">
-      <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="FishStats.cpp">
       <Filter>Source Files\Utility</Filter>
@@ -123,12 +126,21 @@
     <ClCompile Include="Hitbox.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="FishCaught.cpp">
+      <Filter>Source Files\GameStates\Fishing</Filter>
+    </ClCompile>
+    <ClCompile Include="Fishing.cpp">
+      <Filter>Source Files\GameStates\Fishing</Filter>
+    </ClCompile>
+    <ClCompile Include="ReelingIn.cpp">
+      <Filter>Source Files\GameStates\Fishing</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files\GameStates\MainMenu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
-      <Filter>Header Files\GameStates</Filter>
-    </ClInclude>
-    <ClInclude Include="Fishing.h">
       <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
@@ -158,9 +170,6 @@
     <ClInclude Include="EventSystem.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="ReelingIn.h">
-      <Filter>Header Files\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="Bomb.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
@@ -175,9 +184,6 @@
     </ClInclude>
     <ClInclude Include="FishStats.h">
       <Filter>Header Files\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="FishCaught.h">
-      <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="ScoreManager.h">
       <Filter>Header Files\Utility</Filter>
@@ -199,6 +205,18 @@
     </ClInclude>
     <ClInclude Include="Hitbox.h">
       <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ReelingIn.h">
+      <Filter>Header Files\GameStates\Fishing</Filter>
+    </ClInclude>
+    <ClInclude Include="Fishing.h">
+      <Filter>Header Files\GameStates\Fishing</Filter>
+    </ClInclude>
+    <ClInclude Include="FishCaught.h">
+      <Filter>Header Files\GameStates\Fishing</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files\GameStates\MainMenu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

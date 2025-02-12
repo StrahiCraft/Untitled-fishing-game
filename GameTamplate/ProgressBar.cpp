@@ -75,3 +75,7 @@ void ProgressBar::setProgress(float progress) {
 void ProgressBar::changeDecayColor(glm::vec3 newColor) {
 	_fastDecayColor = newColor;
 }
+
+void ProgressBar::changeColor(glm::vec3 newColor) {
+	_progressBarColor = newColor;
+}

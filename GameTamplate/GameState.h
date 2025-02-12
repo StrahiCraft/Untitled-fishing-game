@@ -12,7 +12,7 @@ protected:
 	Player* _player;
 	Fish* _fish;
 
-	vector<Button> _buttons;
+	vector<Button*> _buttons;
 public:
 	GameState(Player* player, Fish* fish);
 	virtual void onStateEnter() = 0;

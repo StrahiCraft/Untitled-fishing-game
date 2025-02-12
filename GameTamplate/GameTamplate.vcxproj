@@ -163,6 +163,7 @@
     <ClCompile Include="Hitbox.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Hitbox.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Pickup.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Primitives.h" />

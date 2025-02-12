@@ -24,4 +24,5 @@ public:
     void decayProgressBar(float newProgress);
     void setProgress(float progress);
     void changeDecayColor(glm::vec3 newColor);
+    void changeColor(glm::vec3 newColor);
 };
