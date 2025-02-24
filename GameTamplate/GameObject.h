@@ -133,6 +133,7 @@ protected:
 		}
 		glEnd();
 
+		glDisable(GL_BLEND);
 		glEnable(GL_TEXTURE_2D);
 	}
 

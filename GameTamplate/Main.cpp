@@ -26,6 +26,16 @@ vector<string> fishStats = {
 	"FishStats/tinCan.fish",
 };
 
+void changeGameState(GameState* newState);
+
+void goToMainMenu() {
+	changeGameState(new MainMenu(player, fish));
+}
+
+void togglePause() {
+	currentState->togglePause();
+}
+
 void writeFishFile() {
 	ofstream file("fishCaught.txt");
 
@@ -101,6 +111,8 @@ void setupEvents() {
 	EventSystem::subscribeFunction("GameOver", resetScore);
 	EventSystem::subscribeFunction("OnMouseClick", onClick);
 	EventSystem::subscribeFunction("Quit", quitGame);
+	EventSystem::subscribeFunction("Pause", togglePause);
+	EventSystem::subscribeFunction("MainMenu", goToMainMenu);
 }
 
 void initialize() {
@@ -119,7 +131,6 @@ void initialize() {
 	setupAudio();
 	ScoreManager::init();
 
-	//changeGameState(new Fishing(player, fish));
 	changeGameState(new MainMenu(player, fish));
 }
 

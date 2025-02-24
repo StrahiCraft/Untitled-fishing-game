@@ -27,6 +27,15 @@ void Fishing::onStateEnter() {
 
 void Fishing::onStateUpdate() {
 
+	// 27 = escape
+	if (Input::getKeyDown(27)) {
+		togglePause();
+	}
+
+	if (_paused) {
+		return;
+	}
+
 	if (!_pickup->getActive()) {
 		resetPickup();
 	}
@@ -59,7 +68,9 @@ void Fishing::onStateUpdate() {
 	}
 }
 
-void Fishing::onStateExit() {}
+void Fishing::onStateExit() {
+	AudioManager::stopMusic(); 
+}
 
 void Fishing::render() {
 	for (int i = 0; i < _stoneSprites.getItemCount(); i++) {
@@ -73,6 +84,10 @@ void Fishing::render() {
 	_pickup->render();
 	_progressBar->render();
 	ScoreManager::render();
+
+	if (_paused) {
+		renderPauseMenu();
+	}
 }
 
 float Fishing::getRemainigFishingTime() {

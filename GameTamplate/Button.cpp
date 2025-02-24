@@ -32,7 +32,9 @@ Button::Button(glm::vec2 position, glm::vec2 scale, string text, Sprite* fontSpr
 }
 
 void Button::onClick() {
-	EventSystem::invokeChannel(_eventChannel);
+	if (_active) {
+		EventSystem::invokeChannel(_eventChannel);
+	}
 }
 
 void Button::setEvent(string eventChannel) {

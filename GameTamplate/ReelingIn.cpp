@@ -30,6 +30,15 @@ void ReelingIn::onStateEnter()
 
 void ReelingIn::onStateUpdate()
 {
+	// 27 = escape
+	if (Input::getKeyDown(27)) {
+		togglePause();
+	}
+
+	if (_paused) {
+		return;
+	}
+
 	_stoneSpriteOffset += Time::getDeltaTime() * -150;
 	_progressBar->updateProgressBar(_reelInScore / _reelInThreshold);
 	checkForBombCollision();
@@ -62,9 +71,15 @@ void ReelingIn::render()
 	}
 	_progressBar->render();
 	ScoreManager::render();
+
+	if (_paused) {
+		renderPauseMenu();
+	}
 }
 
-void ReelingIn::onStateExit(){}
+void ReelingIn::onStateExit() {
+	AudioManager::stopMusic();
+}
 
 void ReelingIn::checkForBombCollision() {
 	for (Bomb* bomb : _bombs) {
