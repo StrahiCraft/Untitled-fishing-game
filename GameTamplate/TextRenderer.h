@@ -12,6 +12,7 @@ private:
 	int _characterOffset;
 	int _firstCharacterASCIIOffset;
 	vector<Sprite*> _characterSprites;
+	string _text;
 public:
 	TextRenderer(glm::vec2 textPosition, Sprite* fontSheet, int characterDistance, int firstCharacterASCIIOffset);
 	void setText(string newText);

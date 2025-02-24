@@ -2,6 +2,8 @@
 #include "Fishing.h"
 #include "ReelingIn.h"
 #include "FishCaught.h"
+#include "GameOver.h"
+#include "Intro.h"
 
 #include <time.h>
 
@@ -30,6 +32,10 @@ void changeGameState(GameState* newState);
 
 void goToMainMenu() {
 	changeGameState(new MainMenu(player, fish));
+}
+
+void gameOver() {
+	changeGameState(new GameOver(player, fish));
 }
 
 void togglePause() {
@@ -107,12 +113,14 @@ void setupEvents() {
 	EventSystem::subscribeFunction("ReelIn", reelIn);
 	EventSystem::subscribeFunction("StartFishing", startFishing);
 	EventSystem::subscribeFunction("FishCaught", fishCaught);
-	EventSystem::subscribeFunction("GameOver", startFishing);
-	EventSystem::subscribeFunction("GameOver", resetScore);
+	EventSystem::subscribeFunction("GameOver", gameOver);
+	EventSystem::subscribeFunction("Reset", resetScore);
+	EventSystem::subscribeFunction("Reset", startFishing);
 	EventSystem::subscribeFunction("OnMouseClick", onClick);
 	EventSystem::subscribeFunction("Quit", quitGame);
 	EventSystem::subscribeFunction("Pause", togglePause);
 	EventSystem::subscribeFunction("MainMenu", goToMainMenu);
+	EventSystem::subscribeFunction("MainMenu", resetScore);
 }
 
 void initialize() {
@@ -131,7 +139,7 @@ void initialize() {
 	setupAudio();
 	ScoreManager::init();
 
-	changeGameState(new MainMenu(player, fish));
+	changeGameState(new Intro(player, fish));
 }
 
 void update() {

@@ -138,6 +138,12 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files\GameStates\MainMenu</Filter>
     </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>Source Files\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Intro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
@@ -217,6 +223,12 @@
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Header Files\GameStates\MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

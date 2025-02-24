@@ -10,6 +10,7 @@ TextRenderer::TextRenderer(glm::vec2 textPosition, Sprite* fontSheet, int charac
 
 void TextRenderer::setText(string newText) {
 	_characterSprites.clear();
+	_text = newText;
 
 	for (int i = 0; i < newText.length(); i++) {
 		_characterSprites.push_back(new Sprite(*_fontSheet));
@@ -22,9 +23,19 @@ void TextRenderer::render() {
 
 	glTranslatef(_textPosition.x, _textPosition.y, 0.0f);
 
+	int wordLetters = 1;
+
 	for (int i = 0; i < _characterSprites.size(); i++) {
-		glTranslatef(_characterOffset, 0.0f, 0.0f);
-		_characterSprites[i]->render();
+		glTranslatef(_characterOffset, 0, 0.0f);
+
+		if (_text[i] == '_') {
+			glTranslatef(wordLetters * -_characterOffset, -_characterOffset, 0.0f);
+			wordLetters = 1;
+		}
+		else {
+			_characterSprites[i]->render();
+			wordLetters++;
+		}
 	}
 
 	glPopMatrix();
