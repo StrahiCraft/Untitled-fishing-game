@@ -161,6 +161,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="HighScore.cpp" />
     <ClCompile Include="Hitbox.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="HighScore.h" />
     <ClInclude Include="Hitbox.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
@@ -204,6 +206,9 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextRenderer.h" />
     <ClInclude Include="Time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="HighScores.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

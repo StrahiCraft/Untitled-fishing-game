@@ -4,6 +4,7 @@
 #include "FishCaught.h"
 #include "GameOver.h"
 #include "Intro.h"
+#include "HighScore.h"
 
 #include <time.h>
 
@@ -13,15 +14,15 @@ int _previousTime;
 int _windowWidth = 800;
 int _windowHeight = 800;
 
-Fish* fish;
-Player* player;
+Fish* _fish;
+Player* _player;
 
-float playerSpeed = 500;
+float _playerSpeed = 500;
 
-GameState* currentState;
-vector<FishStats> fishCaughtStats;
+GameState* _currentState;
+vector<FishStats> _fishCaughtStats;
 
-vector<string> fishStats = {
+vector<string> _fishStats = {
 	"FishStats/carp.fish",
 	"FishStats/clownFish.fish",
 	"FishStats/triggerClownFish.fish",
@@ -31,23 +32,27 @@ vector<string> fishStats = {
 void changeGameState(GameState* newState);
 
 void goToMainMenu() {
-	changeGameState(new MainMenu(player, fish));
+	changeGameState(new MainMenu(_player, _fish));
+}
+
+void goToHighScores() {
+	changeGameState(new HighScore(_player, _fish));
 }
 
 void gameOver() {
-	changeGameState(new GameOver(player, fish));
+	changeGameState(new GameOver(_player, _fish));
 }
 
 void togglePause() {
-	currentState->togglePause();
+	_currentState->togglePause();
 }
 
 void writeFishFile() {
 	ofstream file("fishCaught.txt");
 
-	file << "FISH CAUGHT: " << fishCaughtStats.size() << "\n\n";
+	file << "FISH CAUGHT: " << _fishCaughtStats.size() << "\n\n";
 
-	for (FishStats fishStats : fishCaughtStats) {
+	for (FishStats fishStats : _fishCaughtStats) {
 		file << "NAME: " << fishStats.getName() << "\n";
 		file << "WEIGHT: " << fishStats.getWeight() << "KG\n";
 		file << "SCORE GAIN: " << fishStats.getScore() << "\n";
@@ -63,7 +68,7 @@ void quitGame() {
 
 void resetScore() {
 	ScoreManager::setScore(0);
-	fishCaughtStats.clear();
+	_fishCaughtStats.clear();
 	writeFishFile();
 }
 
@@ -78,34 +83,34 @@ void setupAudio() {
 }
 
 void changeGameState(GameState* newState) {
-	if (currentState != NULL) {
-		currentState->onStateExit();
+	if (_currentState != NULL) {
+		_currentState->onStateExit();
 	}
-	currentState = newState;
-	currentState->onStateEnter();
+	_currentState = newState;
+	_currentState->onStateEnter();
 }
 
 void startFishing() {
-	fish->resetFish(fishStats[rand() % fishStats.size()]);
-	changeGameState(new Fishing(player, fish));
+	_fish->resetFish(_fishStats[rand() % _fishStats.size()]);
+	changeGameState(new Fishing(_player, _fish));
 }
 
 
 void fishCaught() {
-	fishCaughtStats.push_back(fish->getStats());
+	_fishCaughtStats.push_back(_fish->getStats());
 
 	writeFishFile();
 
-	changeGameState(new FishCaught(player, fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
+	changeGameState(new FishCaught(_player, _fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
 }
 
 void onClick() {
-	currentState->onClick(Input::getMouse().x, Input::getMouse().y);
+	_currentState->onClick(Input::getMouse().x, Input::getMouse().y);
 }
 
 void reelIn() {
-	Fishing* fishing = (Fishing*)currentState;
-	changeGameState(new ReelingIn(player, fish, glm::vec2(_windowWidth, _windowHeight),
+	Fishing* fishing = (Fishing*)_currentState;
+	changeGameState(new ReelingIn(_player, _fish, glm::vec2(_windowWidth, _windowHeight),
 		fishing->getRemainigFishingTime(), 45, fishing->getStoneSprites()));
 }
 
@@ -121,6 +126,7 @@ void setupEvents() {
 	EventSystem::subscribeFunction("Pause", togglePause);
 	EventSystem::subscribeFunction("MainMenu", goToMainMenu);
 	EventSystem::subscribeFunction("MainMenu", resetScore);
+	EventSystem::subscribeFunction("HighScore", goToHighScores);
 }
 
 void initialize() {
@@ -128,29 +134,29 @@ void initialize() {
 	glPointSize(10);
 	glLineWidth(3);
 
-	fish = new Fish(glm::vec2(0), glm::vec2(0),
+	_fish = new Fish(glm::vec2(0), glm::vec2(0),
 		new Sprite("Sprites/fish.png", glm::vec2(64, 32), 1, glm::vec2(1), true), glm::vec2(_windowWidth, _windowHeight));
-	fish->resetFish(fishStats[rand() % fishStats.size()]);
+	_fish->resetFish(_fishStats[rand() % _fishStats.size()]);
 
-	player = new Player(glm::vec2(400, 250), glm::vec2(0), 
-		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), playerSpeed);
+	_player = new Player(glm::vec2(400, 250), glm::vec2(0), 
+		new Sprite("Sprites/hook.png", glm::vec2(32), 1, glm::vec2(1), true), _playerSpeed);
 
 	setupEvents();
 	setupAudio();
 	ScoreManager::init();
 
-	changeGameState(new Intro(player, fish));
+	changeGameState(new Intro(_player, _fish));
 }
 
 void update() {
-	currentState->onStateUpdate();
+	_currentState->onStateUpdate();
 }
 
 void render() {
 	//Cistimo sve piksele
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	currentState->render();
+	_currentState->render();
 
 	//Menjamo bafer
 	glutSwapBuffers();

@@ -141,8 +141,11 @@
     <ClCompile Include="GameOver.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
+    <ClCompile Include="HighScore.cpp">
+      <Filter>Source Files\GameStates\MainMenu</Filter>
+    </ClCompile>
     <ClCompile Include="Intro.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameStates\MainMenu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -228,7 +231,15 @@
       <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="Intro.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameStates\MainMenu</Filter>
     </ClInclude>
+    <ClInclude Include="HighScore.h">
+      <Filter>Header Files\GameStates\MainMenu</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="HighScores.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

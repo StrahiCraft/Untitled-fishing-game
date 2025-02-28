@@ -13,6 +13,8 @@ void GameOver::onStateEnter() {
 		new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), 27, 32);
 	_scoreText->setText("SCORE: " + std::to_string(ScoreManager::getScore()));
 
+	ScoreManager::addNewScore(ScoreManager::getScore());
+
 	_resumeButton = new Button(glm::vec2(400, 450), glm::vec2(300, 70),
 		"TRY AGAIN", new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true), glm::vec3(0, 0.8f, 0));
 	_resumeButton->setEvent("Reset");
