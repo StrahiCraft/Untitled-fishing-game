@@ -20,7 +20,6 @@ Player* _player;
 float _playerSpeed = 500;
 
 GameState* _currentState;
-vector<FishStats> _fishCaughtStats;
 
 vector<string> _fishStats = {
 	"FishStats/carp.fish",
@@ -47,29 +46,12 @@ void togglePause() {
 	_currentState->togglePause();
 }
 
-void writeFishFile() {
-	ofstream file("fishCaught.txt");
-
-	file << "FISH CAUGHT: " << _fishCaughtStats.size() << "\n\n";
-
-	for (FishStats fishStats : _fishCaughtStats) {
-		file << "NAME: " << fishStats.getName() << "\n";
-		file << "WEIGHT: " << fishStats.getWeight() << "KG\n";
-		file << "SCORE GAIN: " << fishStats.getScore() << "\n";
-		file << "\n";
-	}
-
-	file.close();
-}
-
 void quitGame() {
 	exit(0);
 }
 
 void resetScore() {
 	ScoreManager::setScore(0);
-	_fishCaughtStats.clear();
-	writeFishFile();
 }
 
 void setupAudio() {
@@ -97,10 +79,6 @@ void startFishing() {
 
 
 void fishCaught() {
-	_fishCaughtStats.push_back(_fish->getStats());
-
-	writeFishFile();
-
 	changeGameState(new FishCaught(_player, _fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
 }
 
