@@ -25,3 +25,10 @@ U ovoj staticnoj klasi se desava sve vezano za score. Cuva trenutan score i najb
 Posto sam odlucio da ne koristim ugradjen text renderer iz gluta, napravio sam svoj. Moj text renderer koristi sprite font i u sustini cuva vektor sprite-ova koji su svi offsetovani (svaki karakter je jedan sprite). Jedine funkcije ove klase su za setovanje teksta i za njegovo renderovanje.
 <h3><a href="GameTamplate/Time.cpp">Time</a></h3>
 Staticna klasa za stvari koje imaju veze sa vremenom, u sustini ona sluzi da mi daje nacin da skaliram delta time i da imam real time koji nije skaliran. Ova klasa postoji posto sam hteo da imam <a href="GameTamplate/ChaosControl.cpp">pickup koji zaustavlja vreme</a>.
+<h2>Game Object klase</h2>
+<h3>Pickup-ovi</h3>
+U igrici postoje 2 pickup-a i oba nasledjuju klasu <a href="GameTamplate/Pickup.cpp">Pickup.cpp</a>, pickup klasa nasledjuje <a href="GameTamplate/GameObject.h">GameObject</a> klasu koju smo dobili za projekat. Pickup klasa ima funkcije za update i renderovanje koje dolaze iz game object-a, dodatne funkcije su mu za dobijanje njegove velicine, virtuelna funkcija koja se poziva kada igrac pokupi pickup i svaka klasa koja nasledjuje ovu mora da definise sta se desi i funkcija za pomeranje pickup-a. Pickup uvek ide sa desna na levo, ali i ova funkcija moze da se predefinise kako bi se drugacije pomerao pickup.
+<h4><a href="GameTamplate/Ring.cpp">Ring.cpp</a></h4>
+Ovaj pickup je manje vise ista stvar kao prstenje iz Sonic igrica (cak je i spritesheet iz jedne), prsten povecava igracev score za 1 kada je pokupljen.
+<h4><a href="GameTamplate/ChaosControl.cpp"></a>ChaosControl.cpp</h4>
+Radjeno po moci od Shadow The Hedgehoga, ovaj pickup zaustavlja vreme na 5 sekundi i stvara zeleni overlay. (Za ovo mi je trebala <a href="GameTamplate/Time.cpp">time</a> klasa).
