@@ -38,3 +38,12 @@ Ovde idu game object-i koji su UI elementi, ovde je verovatno mogao da bude svrs
 Klasicno dugme, moze da se napravi na nekoliko nacina: prvi je da mu damo tekst, font i pozadinu, drugi je da mu damo tekst, font i boju pozadine (ovaj sam ja koristio svuda u projektu posto je najlaksi za koriscenje) i poslednji kome samo dajemo pozadinu. Dugme funkcionise tako sto kad god kliknemo, unutar stanja u kome smo se poziva funkcija koja proverava da li je tacka na koju smo kliknuli unutar nekog dugmeta od tog stanja (stanja su u sustini razlicite scene, vise o njima kasnije), nakon cega se poziva onClick funkcija koja poziva event koji smo namestili pri kreiranju dugmeta.
 <h4><a href="GameTamplate/ProgressBar.cpp">ProgressBar.cpp</a></h4>
 Ova klasa je za liniju koja se puni ili prazni u zavisnosti od kog stanja u igri smo i pokazuje nam ili koliko vremena je ostalo da upecamo ribu ili jos koliko vremena imamo da je uhvatimo. Sastoji se iz vise slojeva: pozadine, decay sloja koji se javlja kada naglo promenimo vrednost, da bi dao vise glatku animaciju i glavnog progress sloja. Funkcije ove klase su sve za manipulisanje ovim slojevima.
+<h3><a href="GameTamplate/Bomb.cpp">Bomb</a></h3>
+Glavna prepreka igrice dok izvlacimo ribu. Kada igrac udari u nju <a href=GameTamplate/ProgressBar.cpp>progress bar</a> se smanjuje za odredjenu kolicinu.
+<h3><a href="GameTamplate/Fish.cpp">Fish</a></h3>
+Klasa koja radi sve vezano sa ribom. Ako je igra u stanju pecanja, riba se nasumicno pomera po ekranu i igrac treba da drzi udicu blizu nje kako bi krenuo da je peca. Kada igra pocne, ribi su ucitane statistike iz jednog od .fish fajlova koji su definisani u <a href="GameTamplate/Main.cpp">Main.cpp</a>.
+<h3><a href="GameTamplate/Hitbox.cpp">Hitbox</a></h3>
+Objekti ove klase blokiraju put igracu i koristi se za kamenje koje se nasumicno stvara pri pocetku igre.
+<h3><a href="GameTamplate/Player.cpp">Player</a></h3>
+Igrac se pomera na WASD i pokusava da upeca ribu, nakon sto je zakaci na udicu, igrac je usporen u zavisnosti od tezine ribe.
+
