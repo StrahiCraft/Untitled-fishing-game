@@ -46,4 +46,12 @@ Klasa koja radi sve vezano sa ribom. Ako je igra u stanju pecanja, riba se nasum
 Objekti ove klase blokiraju put igracu i koristi se za kamenje koje se nasumicno stvara pri pocetku igre.
 <h3><a href="GameTamplate/Player.cpp">Player</a></h3>
 Igrac se pomera na WASD i pokusava da upeca ribu, nakon sto je zakaci na udicu, igrac je usporen u zavisnosti od tezine ribe.
-
+<h2>Game State klase</h2>
+Game state klase u ovom projektu su klase koje koristim kao scene. Bazicna klasa, <a href="GameTamplate/GameState.cpp">GameState.cpp</a> sadrzi reference na igraca i ribu, kao i na sve dugmice koji se nalaze unitar tog stanja. Takodje je u svakom stanju moguce da se pauzira igrica, samo sto ako u nekom stanju zelimo da implementiramo pauzu, moramo da dodamo nacin da menjamo _paused bool.
+<h3>Stanja pecanja</h3>
+<h4><a href="GameTamplate/Fishing.cpp">Fishing.cpp</a></h4>
+Pocetno stanje igre (ne racunajuci main meni i tako to, vec kad zapocnemo nas pokusaj), u kom igrac pokusava da krene da peca ribu, u ovom stanju se stvaraju pickup-ovi i stva se kamenje koje blokira igraca.
+<h4><a hreef="GameTamplate/ReelingIn.cpp">ReelingIn.cpp</a></h4>
+Stanje upecavanja ribe, igrac drzi ribu na udici sto ga usporava u zavisnosti od njene tezine, i igrac mora da izbegava bombe dok mu se progress bar ne napuni. Bombe dolaze sa vrha ekrana i sto je igrac blize vrhu ekrana to se brze puni progress bar.
+<h4><a href="GameTamplate/FishCaught.cpp">FishCaught.cpp</a></h4>
+U ovom stanju se igracu prikazuje sta je upecao i score ribe se dodaje njegovom trenutnom.
