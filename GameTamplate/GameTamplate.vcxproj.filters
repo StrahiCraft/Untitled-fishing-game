@@ -138,14 +138,14 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files\GameStates\MainMenu</Filter>
     </ClCompile>
-    <ClCompile Include="GameOver.cpp">
-      <Filter>Source Files\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="HighScore.cpp">
       <Filter>Source Files\GameStates\MainMenu</Filter>
     </ClCompile>
     <ClCompile Include="Intro.cpp">
       <Filter>Source Files\GameStates\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>Source Files\GameStates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
