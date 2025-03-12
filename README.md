@@ -55,3 +55,13 @@ Pocetno stanje igre (ne racunajuci main meni i tako to, vec kad zapocnemo nas po
 Stanje upecavanja ribe, igrac drzi ribu na udici sto ga usporava u zavisnosti od njene tezine, i igrac mora da izbegava bombe dok mu se progress bar ne napuni. Bombe dolaze sa vrha ekrana i sto je igrac blize vrhu ekrana to se brze puni progress bar.
 <h4><a href="GameTamplate/FishCaught.cpp">FishCaught.cpp</a></h4>
 U ovom stanju se igracu prikazuje sta je upecao i score ribe se dodaje njegovom trenutnom.
+<h3>Main menu stanja</h3>
+Stanja koja su meniji.
+<h4><a href="GameTamplate/Intro.cpp">Intro.cpp</a></h4>
+Intro scena, kada se igrica pali pise ime igrice i moje ime, prezime i indeks.
+<h4><a href="GameTamplate/MainMenu.cpp">MainMenu.cpp</a></h4>
+Main meni igrice, odavde moze da se zapocne igra, pogleda high score i da se iskljuci igra.
+<h4><a href="GameTamplate/HighScore.cpp">HighScore.cpp</a></h4>
+Ovde su prikazani 5 najboljih high score-ova.
+<h3>Game Over stanje</h3>
+Kada igrac izgubi tako sto mu istekne vreme dok peca ili udari u previse bombi ovde zavrsi, odavde moze da se vrati na main meni ili da igra ponovo.
