@@ -21,7 +21,6 @@ private:
 	float _maxWeight;
 
 	string _fishName;
-	string _fishDescription;
 public:
 	FishStats(string filePath);
 
@@ -33,6 +32,5 @@ public:
 	float getGoalCircleSize();
 	int getScore();
 	string getName();
-	string getDescription();
 };
 

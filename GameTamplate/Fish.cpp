@@ -31,11 +31,6 @@ string Fish::getName()
 	return _fishStats->getName();
 }
 
-string Fish::getDescription()
-{
-	return _fishStats->getDescription();
-}
-
 void Fish::update() {
 	if (!_active) {
 		return;

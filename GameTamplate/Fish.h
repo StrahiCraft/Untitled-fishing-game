@@ -25,7 +25,6 @@ public:
     int getScore();
     float getWeight();
     string getName();
-    string getDescription();
 
     void update();
     void render();

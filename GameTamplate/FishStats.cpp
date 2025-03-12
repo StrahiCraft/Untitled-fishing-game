@@ -62,8 +62,3 @@ string FishStats::getName()
 {
 	return _fishName;
 }
-
-string FishStats::getDescription()
-{
-	return _fishDescription;
-}
