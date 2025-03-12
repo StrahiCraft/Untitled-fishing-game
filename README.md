@@ -30,5 +30,11 @@ Staticna klasa za stvari koje imaju veze sa vremenom, u sustini ona sluzi da mi 
 U igrici postoje 2 pickup-a i oba nasledjuju klasu <a href="GameTamplate/Pickup.cpp">Pickup.cpp</a>, pickup klasa nasledjuje <a href="GameTamplate/GameObject.h">GameObject</a> klasu koju smo dobili za projekat. Pickup klasa ima funkcije za update i renderovanje koje dolaze iz game object-a, dodatne funkcije su mu za dobijanje njegove velicine, virtuelna funkcija koja se poziva kada igrac pokupi pickup i svaka klasa koja nasledjuje ovu mora da definise sta se desi i funkcija za pomeranje pickup-a. Pickup uvek ide sa desna na levo, ali i ova funkcija moze da se predefinise kako bi se drugacije pomerao pickup.
 <h4><a href="GameTamplate/Ring.cpp">Ring.cpp</a></h4>
 Ovaj pickup je manje vise ista stvar kao prstenje iz Sonic igrica (cak je i spritesheet iz jedne), prsten povecava igracev score za 1 kada je pokupljen.
-<h4><a href="GameTamplate/ChaosControl.cpp"></a>ChaosControl.cpp</h4>
+<h4><a href="GameTamplate/ChaosControl.cpp">ChaosControl.cpp</a></h4>
 Radjeno po moci od Shadow The Hedgehoga, ovaj pickup zaustavlja vreme na 5 sekundi i stvara zeleni overlay. (Za ovo mi je trebala <a href="GameTamplate/Time.cpp">time</a> klasa).
+<h3>UI elementi</h3>
+Ovde idu game object-i koji su UI elementi, ovde je verovatno mogao da bude svrstan i <a href="GameTamplate/TextRenderer.cpp">text renderer</a> ali sam odlucio njega da svrstam u utility klasu.
+<h4><a href="GameTamplate/Button.cpp">Button</a></h4>
+Klasicno dugme, moze da se napravi na nekoliko nacina: prvi je da mu damo tekst, font i pozadinu, drugi je da mu damo tekst, font i boju pozadine (ovaj sam ja koristio svuda u projektu posto je najlaksi za koriscenje) i poslednji kome samo dajemo pozadinu. Dugme funkcionise tako sto kad god kliknemo, unutar stanja u kome smo se poziva funkcija koja proverava da li je tacka na koju smo kliknuli unutar nekog dugmeta od tog stanja (stanja su u sustini razlicite scene, vise o njima kasnije), nakon cega se poziva onClick funkcija koja poziva event koji smo namestili pri kreiranju dugmeta.
+<h4><a href="GameTamplate/ProgressBar.cpp">ProgressBar.cpp</a></h4>
+Ova klasa je za liniju koja se puni ili prazni u zavisnosti od kog stanja u igri smo i pokazuje nam ili koliko vremena je ostalo da upecamo ribu ili jos koliko vremena imamo da je uhvatimo. Sastoji se iz vise slojeva: pozadine, decay sloja koji se javlja kada naglo promenimo vrednost, da bi dao vise glatku animaciju i glavnog progress sloja. Funkcije ove klase su sve za manipulisanje ovim slojevima.
