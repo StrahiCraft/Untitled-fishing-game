@@ -54,6 +54,12 @@ void resetScore() {
 	ScoreManager::setScore(0);
 }
 
+void burstStream() {
+	ReelingIn* reelingIn = (ReelingIn*)_currentState;
+
+	reelingIn->clearBombs();
+}
+
 void setupAudio() {
 	AudioManager::init();
 	AudioManager::addSong("fishing", "Audio/fishing.mp3");
@@ -62,6 +68,7 @@ void setupAudio() {
 	AudioManager::addSound("explode", "Audio/explode.mp3");
 	AudioManager::addSound("ring", "Audio/ring.wav");
 	AudioManager::addSound("chaosControl", "Audio/chaosControl.wav");
+	AudioManager::addSound("BurstStream", "Audio/burstStream.wav");
 }
 
 void changeGameState(GameState* newState) {
@@ -105,6 +112,7 @@ void setupEvents() {
 	EventSystem::subscribeFunction("MainMenu", goToMainMenu);
 	EventSystem::subscribeFunction("MainMenu", resetScore);
 	EventSystem::subscribeFunction("HighScore", goToHighScores);
+	EventSystem::subscribeFunction("BurstStream", burstStream);
 }
 
 void initialize() {

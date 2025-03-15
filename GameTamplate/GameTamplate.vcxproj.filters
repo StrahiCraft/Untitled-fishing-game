@@ -147,6 +147,9 @@
     <ClCompile Include="GameOver.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
+    <ClCompile Include="BurstStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
@@ -235,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="HighScore.h">
       <Filter>Header Files\GameStates\MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="BurstStream.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

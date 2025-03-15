@@ -1,0 +1,10 @@
+﻿LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1086 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+soil2.lib(SOIL2.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(SOIL2.obj)' or at ''; linking object as if no debug info
+soil2.lib(image_DXT.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(image_DXT.obj)' or at ''; linking object as if no debug info
+soil2.lib(image_helper.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(image_helper.obj)' or at ''; linking object as if no debug info
+soil2.lib(wfETC.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(wfETC.obj)' or at ''; linking object as if no debug info
+  GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Release\GameTamplate.exe

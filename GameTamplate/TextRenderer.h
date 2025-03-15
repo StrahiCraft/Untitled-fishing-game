@@ -18,4 +18,3 @@ public:
 	void setText(string newText);
 	void render();
 };
-

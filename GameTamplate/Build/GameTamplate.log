@@ -1,0 +1,387 @@
+﻿  AudioManager.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(67,1): message : while compiling class template member function 'int Dictionary<std::string,FMOD::Sound *>::getItemIndex(K)'
+          with
+          [
+              K=std::string
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(44,16): message : see the first reference to 'Dictionary<std::string,FMOD::Sound *>::getItemIndex' in 'Dictionary<std::string,FMOD::Sound *>::getValue'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp(28,21): message : see the first reference to 'Dictionary<std::string,FMOD::Sound *>::getValue' in 'AudioManager::playSound'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(4,32): message : while compiling class template member function 'Dictionary<std::string,FMOD::Sound *>::Dictionary(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp(5,48): message : see the first reference to 'Dictionary<std::string,FMOD::Sound *>::Dictionary' in 'void __cdecl `dynamic initializer for 'private: static Dictionary<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,FMOD::Sound *> AudioManager::_soundEffects''(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.cpp(5,34): message : see reference to class template instantiation 'Dictionary<std::string,FMOD::Sound *>' being compiled
+  Bomb.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  Button.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+  ChaosControl.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+  Dictionary.cpp
+  DictionaryItem.cpp
+  EventSystem.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(67,1): message : while compiling class template member function 'int Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>::getItemIndex(K)'
+          with
+          [
+              K=std::string
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(20,16): message : see the first reference to 'Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>::getItemIndex' in 'Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>::removeItem'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.cpp(13,21): message : see the first reference to 'Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>::removeItem' in 'EventSystem::removeChannel'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(4,32): message : while compiling class template member function 'Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>::Dictionary(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.cpp(3,53): message : see the first reference to 'Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>::Dictionary' in 'void __cdecl `dynamic initializer for 'private: static Dictionary<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::vector<void (__cdecl*)(void),std::allocator<void (__cdecl*)(void)> > > EventSystem::_events''(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.cpp(3,63): message : see reference to class template instantiation 'Dictionary<std::string,std::vector<void (__cdecl *)(void),std::allocator<void (__cdecl *)(void)>>>' being compiled
+  Fish.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+  FishCaught.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+  Fishing.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(67,1): message : while compiling class template member function 'int Dictionary<glm::vec2,Hitbox *>::getItemIndex(K)'
+          with
+          [
+              K=glm::vec2
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(26,52): message : while compiling class template member function 'void Dictionary<glm::vec2,Hitbox *>::setValue(K,V)'
+          with
+          [
+              K=glm::vec2,
+              V=Hitbox *
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(11,11): message : see the first reference to 'Dictionary<glm::vec2,Hitbox *>::setValue' in 'Dictionary<glm::vec2,Hitbox *>::addItem'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.cpp(16,25): message : see the first reference to 'Dictionary<glm::vec2,Hitbox *>::addItem' in 'Fishing::onStateEnter'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(4,32): message : while compiling class template member function 'Dictionary<glm::vec2,Hitbox *>::Dictionary(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.h(17,66): message : see the first reference to 'Dictionary<glm::vec2,Hitbox *>::Dictionary' in 'Fishing::Fishing'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.h(14,36): message : see reference to class template instantiation 'Dictionary<glm::vec2,Hitbox *>' being compiled
+  FishStats.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\FishStats.cpp(27,15): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+  GameObject.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  GameOver.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+  GameState.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\GameState.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
+  HighScore.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\HighScore.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
+  Hitbox.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+  Input.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Input.cpp(13,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Input.cpp(14,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Intro.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+  Main.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(86,63): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(86,42): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(111,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  MainMenu.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+  Generating Code...
+  Compiling...
+  Pickup.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  Player.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+  ProgressBar.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  ReelingIn.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+  Ring.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
+  ScoreManager.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+  TextRenderer.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(15,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(28,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(29,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(32,50): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\TextRenderer.cpp(32,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Time.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+soil2.lib(SOIL2.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(SOIL2.obj)' or at ''; linking object as if no debug info
+soil2.lib(image_DXT.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(image_DXT.obj)' or at ''; linking object as if no debug info
+soil2.lib(image_helper.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(image_helper.obj)' or at ''; linking object as if no debug info
+soil2.lib(wfETC.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(wfETC.obj)' or at ''; linking object as if no debug info
+  GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Build\GameTamplate.exe

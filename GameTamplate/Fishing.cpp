@@ -59,7 +59,7 @@ void Fishing::onStateUpdate() {
 	_player->update();
 	_pickup->update();
 
-	if (glm::distance(_player->getPosition(), _pickup->getPosition()) <= _pickup->getSize()) {
+	if (glm::distance(_player->getPosition(), _pickup->getPosition()) <= _pickup->getSize() * _pickup->getScale().x) {
 		_pickup->onPickup();
 	}
 
@@ -100,8 +100,8 @@ Dictionary<glm::vec2, Sprite*> Fishing::getStoneSprites()
 }
 
 void Fishing::resetPickup() {
-	// change to the number of pickups implemented
-	int pickupTypeCount = 2;
+	// change to the number of pickups intended for this state
+	int pickupTypeCount = 3;
 
 	switch (rand() % pickupTypeCount) {
 	case 0:
@@ -109,6 +109,9 @@ void Fishing::resetPickup() {
 		break;
 	case 1:
 		_pickup = new ChaosControl(glm::vec2(-499 + rand() % 500, 50 + rand() % 700), glm::vec2(50 + rand() % 200, -1 + rand() % 2));
+		break;
+	case 2:
+		_pickup = new Ring(glm::vec2(-499 + rand() % 500, 50 + rand() % 700), glm::vec2(50 + rand() % 200, -1 + rand() % 2), 2);
 		break;
 	default:
 		_pickup = new Ring(glm::vec2(-499 + rand() % 500, 50 + rand() % 700), glm::vec2(50 + rand() % 200, -1 + rand() % 2));

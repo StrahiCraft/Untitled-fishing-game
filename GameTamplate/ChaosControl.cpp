@@ -34,7 +34,7 @@ void ChaosControl::render() {
 		glScalef(1000, 1000, 1);
 
 		_chaosControlOverlay->render();
-
+		
 		glPopMatrix();
 		return;
 	}

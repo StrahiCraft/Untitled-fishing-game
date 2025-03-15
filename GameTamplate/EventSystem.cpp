@@ -31,6 +31,10 @@ void EventSystem::unSubscribeFunction(string channel, void(*function)()) {
 }
 
 void EventSystem::invokeChannel(string channel) {
+	if (!_events.containsKey(channel)) {
+		return;
+	}
+
 	vector<void (*)()> eventFunctions = _events.getValue(channel);
 
 	for (void (*function)() : eventFunctions) {
