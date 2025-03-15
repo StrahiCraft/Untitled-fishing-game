@@ -61,7 +61,7 @@ void AudioManager::playSong(string songName) {
 	FMOD::Sound* song = _music.getValue(songName);
 
 	result = _audioSystem->playSound(song, nullptr, false, &_musicChannel);
-	_musicChannel->setVolume(0.24f);
+	_musicChannel->setVolume(0.14f);
 
 	debugResult(result);
 }
