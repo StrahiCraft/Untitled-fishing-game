@@ -44,7 +44,7 @@ void ProgressBar::render() {
 
 	glBegin(GL_QUADS);
 
-	drawProgressLayer(1, _backgroundColor);
+	drawProgressLayer(_maxProgress, _backgroundColor);
 	drawProgressLayer(_fastDecayProgress, _fastDecayColor);
 	drawProgressLayer(_progress, _progressBarColor);
 
@@ -68,8 +68,16 @@ void ProgressBar::decayProgressBar(float newProgress) {
 	_fastDecayTimer = 0;
 }
 
+float ProgressBar::getProgress()
+{
+	return _progress;
+}
+
 void ProgressBar::setProgress(float progress) {
 	_progress = progress;
+	if (_progress > _maxProgress) {
+		_progress = _maxProgress;
+	}
 }
 
 void ProgressBar::changeDecayColor(glm::vec3 newColor) {
@@ -78,4 +86,24 @@ void ProgressBar::changeDecayColor(glm::vec3 newColor) {
 
 void ProgressBar::changeColor(glm::vec3 newColor) {
 	_progressBarColor = newColor;
+}
+
+void ProgressBar::setMaxProgress(float value) {
+	_maxProgress = value;
+
+	if (_maxProgress > 1) {
+		_maxProgress = 1;
+	}
+
+	if (_progress > _maxProgress) {
+		_progress = _maxProgress;
+	}
+
+	if (_fastDecayProgress > _maxProgress) {
+		_fastDecayProgress = _progress;
+	}
+}
+
+float ProgressBar::getMaxProgress() {
+	return _maxProgress;
 }

@@ -148,7 +148,7 @@
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="BurstStream.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameObjects\Pickups</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -240,7 +240,7 @@
       <Filter>Header Files\GameStates\MainMenu</Filter>
     </ClInclude>
     <ClInclude Include="BurstStream.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects\Pickups</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

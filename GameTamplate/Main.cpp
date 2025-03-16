@@ -96,7 +96,7 @@ void onClick() {
 void reelIn() {
 	Fishing* fishing = (Fishing*)_currentState;
 	changeGameState(new ReelingIn(_player, _fish, glm::vec2(_windowWidth, _windowHeight),
-		fishing->getRemainigFishingTime(), 45, fishing->getStoneSprites()));
+		fishing->getRemainigFishingTime() / 30.0f, 45, fishing->getStoneSprites()));
 }
 
 void setupEvents() {

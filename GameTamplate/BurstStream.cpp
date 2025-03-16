@@ -41,6 +41,10 @@ void BurstStream::render() {
 }
 
 void BurstStream::onPickup() {
+	if (_animationStarted) {
+		return;
+	}
+
 	_animationStarted = true;
 	
 	setPosition(glm::vec2(-200, 400));

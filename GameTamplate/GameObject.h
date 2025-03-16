@@ -66,6 +66,7 @@ public:
 	void setActive(const GLboolean is_active) { this->_active = is_active; }
 
 	float getVelocityAngle();
+	float getVelocityMagnitude();
 
 	virtual void update() {
 		if (_active) {

@@ -9,7 +9,7 @@ class ReelingIn :
     public GameState
 {
 private:
-    float _reelInScore;
+    float _reelInScore = 0;
     float _reelInThreshold;
     int _bombCount;
     vector<Bomb*> _bombs;
@@ -18,6 +18,8 @@ private:
     Dictionary<glm::vec2, Sprite*> _stoneSprites;
     float _stoneSpriteOffset = 0;
     Pickup* _pickup;
+    float _lineIntegrity;
+    float _lineIntegrityDecaySpeed = 0.2f;
 public:
     ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInThreshold, int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites);
     void onStateEnter();
@@ -27,7 +29,6 @@ public:
     void clearBombs();
 private:
     void checkForBombCollision();
-    void handleScoreCalculation();
     void resetPickup();
 };
 
