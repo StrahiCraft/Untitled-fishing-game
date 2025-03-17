@@ -68,15 +68,15 @@ void ReelingIn::onStateUpdate()
 	}
 
 	_stoneSpriteOffset += Time::getDeltaTime() * -150;
-	_reelInScore += Time::getDeltaTime() * _player->getPosition().y / 300;
+	_reelInScore += Time::getDeltaTime();
 	if (_player->getVelocityMagnitude() == 0) {
-		_lineIntegrity += Time::getDeltaTime() * _lineIntegrityDecaySpeed;
+		_lineIntegrity += Time::getDeltaTime() * _lineIntegrityDecaySpeed * ((_player->getPosition().y + 100) / 500);
 		if (_lineIntegrity > _progressBar->getMaxProgress()) {
 			_lineIntegrity = _progressBar->getMaxProgress();
 		}
 	}
 	else {
-		_lineIntegrity -= _player->getVelocityMagnitude() * Time::getDeltaTime() * _lineIntegrityDecaySpeed;
+		_lineIntegrity -= _player->getVelocityMagnitude() * Time::getDeltaTime() * _lineIntegrityDecaySpeed / ((_player->getPosition().y + 100) / 400);
 	}
 
 	_progressBar->setProgress(_lineIntegrity);
