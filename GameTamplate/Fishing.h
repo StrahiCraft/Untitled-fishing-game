@@ -14,12 +14,13 @@ private:
     Dictionary<glm::vec2, Hitbox*> _stoneHitboxes;
     Dictionary<glm::vec2, Sprite*> _stoneSprites;
 public:
-    Fishing(Player* player, Fish* fish) : GameState(player, fish){}
+    Fishing(Player* player, Fish* fish, float lineIntegrity);
     void onStateEnter();
     void onStateUpdate();
     void onStateExit();
     void render();
     float getRemainigFishingTime();
+    float getLineStrength();
     Dictionary<glm::vec2, Sprite*> getStoneSprites();
 private:
     void resetPickup();

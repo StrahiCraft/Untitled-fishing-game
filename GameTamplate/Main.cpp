@@ -81,9 +81,14 @@ void changeGameState(GameState* newState) {
 
 void startFishing() {
 	_fish->resetFish(_fishStats[rand() % _fishStats.size()]);
-	changeGameState(new Fishing(_player, _fish));
+	changeGameState(new Fishing(_player, _fish, 1));
 }
 
+void onLineBreak() {
+	ReelingIn* reelingIn = (ReelingIn*)_currentState;
+	_fish->resetFish(_fishStats[rand() % _fishStats.size()]);
+	changeGameState(new Fishing(_player, _fish, reelingIn->getLineStrength()));
+}
 
 void fishCaught() {
 	changeGameState(new FishCaught(_player, _fish, new Sprite("Sprites/font.png", glm::vec2(32), 1, glm::vec2(15, 8), true)));
@@ -96,7 +101,7 @@ void onClick() {
 void reelIn() {
 	Fishing* fishing = (Fishing*)_currentState;
 	changeGameState(new ReelingIn(_player, _fish, glm::vec2(_windowWidth, _windowHeight),
-		fishing->getRemainigFishingTime() / 30.0f, 45, fishing->getStoneSprites()));
+		fishing->getRemainigFishingTime() / 30.0f, fishing->getLineStrength(), 45, fishing->getStoneSprites()));
 }
 
 void setupEvents() {
@@ -113,6 +118,7 @@ void setupEvents() {
 	EventSystem::subscribeFunction("MainMenu", resetScore);
 	EventSystem::subscribeFunction("HighScore", goToHighScores);
 	EventSystem::subscribeFunction("BurstStream", burstStream);
+	EventSystem::subscribeFunction("OnLineBreak", onLineBreak);
 }
 
 void initialize() {

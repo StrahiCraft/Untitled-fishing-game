@@ -21,12 +21,13 @@ private:
     float _lineIntegrity;
     float _lineIntegrityDecaySpeed = 0.2f;
 public:
-    ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float reelInThreshold, int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites);
+    ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float lineIntegrity, float lineStrength, int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites);
     void onStateEnter();
     void onStateUpdate();
     void onStateExit();
     void render();
     void clearBombs();
+    float getLineStrength();
 private:
     void checkForBombCollision();
     void resetPickup();

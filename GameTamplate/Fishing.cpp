@@ -1,16 +1,21 @@
 #include "Fishing.h"
 
-void Fishing::onStateEnter() {
-	AudioManager::playSong("fishing");
+Fishing::Fishing(Player* player, Fish* fish, float lineIntegrity) : GameState(player, fish) {
+	_maxFishingTime = 30 * lineIntegrity;
+	_remainingFishingTime = _maxFishingTime;
 	_progressBar = new ProgressBar(glm::vec2(400, 50), glm::vec2(500, 15),
 		glm::vec3(1), glm::vec3(0.2f), glm::vec3(0.5f, 0, 0));
+	_progressBar->setMaxProgress(lineIntegrity);
+}
+
+void Fishing::onStateEnter() {
+	AudioManager::playSong("fishing");
+	
 	_player->setActive(true);
 	_player->setRotation(0);
 	_player->setPosition(glm::vec2(400, 400));
 	_player->setSpeedDebuff(0);
-	_maxFishingTime = 30;
-	_remainingFishingTime = _maxFishingTime;
-
+	
 	for (int i = 0; i < 5 + rand() % 25; i++) {
 		glm::vec2 tilePosition = glm::vec2(rand() % 13, rand() % 13);
 		_stoneHitboxes.addItem(tilePosition, new Hitbox(tilePosition * glm::vec2(64), glm::vec2(64), _player));
@@ -49,7 +54,7 @@ void Fishing::onStateUpdate() {
 	}
 
 	_fish->update();
-	_progressBar->updateProgressBar(_remainingFishingTime / _maxFishingTime);
+	_progressBar->updateProgressBar(_remainingFishingTime / _maxFishingTime * _progressBar->getMaxProgress());
 	_progressBar->update();
 	
 	for (int i = 0; i < _stoneHitboxes.getItemCount(); i++) {
@@ -92,6 +97,11 @@ void Fishing::render() {
 
 float Fishing::getRemainigFishingTime() {
 	return _remainingFishingTime;
+}
+
+float Fishing::getLineStrength()
+{
+	return _progressBar->getMaxProgress();
 }
 
 Dictionary<glm::vec2, Sprite*> Fishing::getStoneSprites()

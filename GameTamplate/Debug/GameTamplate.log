@@ -1,4 +1,4 @@
-﻿  Main.cpp
+﻿  Fishing.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
@@ -13,18 +13,24 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(93,63): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(67,1): message : while compiling class template member function 'int Dictionary<glm::vec2,Hitbox *>::getItemIndex(K)'
           with
           [
-              T=float
+              K=glm::vec2
           ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(93,42): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(26,52): message : while compiling class template member function 'void Dictionary<glm::vec2,Hitbox *>::setValue(K,V)'
           with
           [
-              T=float
+              K=glm::vec2,
+              V=Hitbox *
           ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(119,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  ReelingIn.cpp
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(11,11): message : see the first reference to 'Dictionary<glm::vec2,Hitbox *>::setValue' in 'Dictionary<glm::vec2,Hitbox *>::addItem'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.cpp(21,25): message : see the first reference to 'Dictionary<glm::vec2,Hitbox *>::addItem' in 'Fishing::onStateEnter'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Dictionary.cpp(4,32): message : while compiling class template member function 'Dictionary<glm::vec2,Hitbox *>::Dictionary(void)'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.cpp(3,93): message : see the first reference to 'Dictionary<glm::vec2,Hitbox *>::Dictionary' in 'Fishing::Fishing'
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Fishing.h(14,36): message : see reference to class template instantiation 'Dictionary<glm::vec2,Hitbox *>' being compiled
+  Main.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
@@ -39,5 +45,16 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(98,63): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(98,42): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Main.cpp(125,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
   GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Debug\GameTamplate.exe

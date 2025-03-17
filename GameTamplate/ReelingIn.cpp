@@ -1,6 +1,7 @@
 #include "ReelingIn.h"
 
-ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float lineIntegrity, int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites) : GameState(player, fish)
+ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float lineIntegrity, float lineStrength,
+	int bombCount, Dictionary<glm::vec2, Sprite*> stoneSprites) : GameState(player, fish)
 {
 	_windowSize = windowSize;
 	_reelInThreshold = 60;
@@ -14,6 +15,7 @@ ReelingIn::ReelingIn(Player* player, Fish* fish, glm::vec2 windowSize, float lin
 		glm::vec3(1), glm::vec3(0.2f), glm::vec3(0.5f, 0, 0));
 	_progressBar->updateProgressBar(lineIntegrity);
 	_lineIntegrity = lineIntegrity;
+	_progressBar->setMaxProgress(lineStrength);
 }
 
 void ReelingIn::onStateEnter()
@@ -97,7 +99,7 @@ void ReelingIn::onStateUpdate()
 	}
 
 	if (_lineIntegrity < 0) {
-		EventSystem::invokeChannel("StartFishing");
+		EventSystem::invokeChannel("OnLineBreak");
 	}
 }
 
@@ -130,6 +132,10 @@ void ReelingIn::clearBombs() {
 	for (Bomb* bomb : _bombs) {
 		bomb->resetBomb();
 	}
+}
+
+float ReelingIn::getLineStrength() {
+	return _progressBar->getMaxProgress();
 }
 
 void ReelingIn::onStateExit() {
