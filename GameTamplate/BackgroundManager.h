@@ -19,6 +19,7 @@ public:
 	static void init();
 	static void setBackground(float lerpValue);
 	static void render();
+	static void renderOverlay();
 private:
 	static void setColor(float lerpValue, glm::vec3 &color);
 };

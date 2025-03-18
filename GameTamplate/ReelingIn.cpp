@@ -129,6 +129,8 @@ void ReelingIn::render()
 
 	_pickup->render();
 
+	BackgroundManager::renderOverlay();
+
 	_progressBar->render();
 	ScoreManager::render();
 

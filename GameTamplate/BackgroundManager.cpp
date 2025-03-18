@@ -37,6 +37,24 @@ void BackgroundManager::render() {
 	glEnd();
 }
 
+void BackgroundManager::renderOverlay() {
+	glDisable(GL_TEXTURE_2D);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+
+	glBegin(GL_QUADS);
+	glColor4f(_topColor.r, _topColor.g, _topColor.b, 0.2f);
+	glVertex2f(0, 1000);
+	glVertex2f(800, 1000);
+	glColor4f(_bottomColor.r, _bottomColor.g, _bottomColor.b, 0.2f);
+	glVertex2f(800, -200);
+	glVertex2f(0, -200);
+	glEnd();
+
+	glDisable(GL_BLEND);
+	glEnable(GL_TEXTURE_2D);
+}
+
 void BackgroundManager::setColor(float lerpValue, glm::vec3 &color) {
 	if (lerpValue > 1) {
 		lerpValue = 1;
