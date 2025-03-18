@@ -136,6 +136,7 @@ void initialize() {
 	setupEvents();
 	setupAudio();
 	ScoreManager::init();
+	BackgroundManager::init();
 
 	changeGameState(new Intro(_player, _fish));
 }

@@ -30,16 +30,18 @@ void ReelingIn::onStateEnter()
 	}
 
 	if (ScoreManager::getScore() < 30) {
-		_reelInThreshold = 15;
-		return;
-	}
-	if (ScoreManager::getScore() < 50) {
 		_reelInThreshold = 25;
 		return;
 	}
-	if (ScoreManager::getScore() < 100) {
-		_reelInThreshold = 40;
+	if (ScoreManager::getScore() < 50) {
+		_reelInThreshold = 45;
+		return;
 	}
+	if (ScoreManager::getScore() < 100) {
+		_reelInThreshold = 60;
+		return;
+	}
+	_reelInThreshold = 90;
 }
 
 void ReelingIn::onStateUpdate()
@@ -69,6 +71,9 @@ void ReelingIn::onStateUpdate()
 
 	_stoneSpriteOffset += Time::getDeltaTime() * -150;
 	_reelInScore += Time::getDeltaTime();
+
+	BackgroundManager::setBackground(1 - (_reelInThreshold - _reelInScore) / 90.0f);
+
 	if (_player->getVelocityMagnitude() == 0) {
 		_lineIntegrity += Time::getDeltaTime() * _lineIntegrityDecaySpeed * ((_player->getPosition().y + 100) / 500);
 		_progressBar->changeColor(glm::vec3(0.5f, 1, 0.5f));
@@ -100,13 +105,15 @@ void ReelingIn::onStateUpdate()
 		_bombs[i]->update();
 	}
 
-	if (_lineIntegrity < 0) {
+	if (_lineIntegrity <= 0) {
 		EventSystem::invokeChannel("OnLineBreak");
 	}
 }
 
 void ReelingIn::render()
 {
+	BackgroundManager::render();
+
 	for (int i = 0; i < _stoneSprites.getItemCount(); i++) {
 		glPushMatrix();
 		glTranslatef(_stoneSprites.getKey(i).x * 64 - 32, _stoneSprites.getKey(i).y * 64 - 32 + _stoneSpriteOffset, 0);

@@ -3,6 +3,7 @@
 #include "Bomb.h"
 #include "ProgressBar.h"
 #include "BurstStream.h"
+#include "BackgroundManager.h"
 #include "Ring.h"
 
 class ReelingIn :
