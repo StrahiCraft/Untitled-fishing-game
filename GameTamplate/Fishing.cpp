@@ -6,6 +6,20 @@ Fishing::Fishing(Player* player, Fish* fish, float lineIntegrity) : GameState(pl
 	_progressBar = new ProgressBar(glm::vec2(400, 50), glm::vec2(500, 15),
 		glm::vec3(1), glm::vec3(0.2f), glm::vec3(0.5f, 0, 0));
 	_progressBar->setMaxProgress(lineIntegrity);
+
+	if (ScoreManager::getScore() < 30) {
+		BackgroundManager::setBackground(1 - 25.0f / 90.0f);
+		return;
+	}
+	if (ScoreManager::getScore() < 50) {
+		BackgroundManager::setBackground(1 - 45.0f / 90.0f);
+		return;
+	}
+	if (ScoreManager::getScore() < 100) {
+		BackgroundManager::setBackground(1 - 60.0f / 90.0f);
+		return;
+	}
+	BackgroundManager::setBackground(1 - 90.0f / 90.0f);
 }
 
 void Fishing::onStateEnter() {
@@ -78,6 +92,8 @@ void Fishing::onStateExit() {
 }
 
 void Fishing::render() {
+	BackgroundManager::render();
+
 	for (int i = 0; i < _stoneSprites.getItemCount(); i++) {
 		glPushMatrix();
 		glTranslatef(_stoneSprites.getKey(i).x * 64 - 32, _stoneSprites.getKey(i).y * 64 - 32, 0);
@@ -87,6 +103,9 @@ void Fishing::render() {
 	_fish->render();
 	_player->render();
 	_pickup->render();
+
+	BackgroundManager::renderOverlay();
+
 	_progressBar->render();
 	ScoreManager::render();
 

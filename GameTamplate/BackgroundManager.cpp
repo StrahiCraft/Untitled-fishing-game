@@ -43,10 +43,10 @@ void BackgroundManager::renderOverlay() {
 	glEnable(GL_BLEND);
 
 	glBegin(GL_QUADS);
-	glColor4f(_topColor.r, _topColor.g, _topColor.b, 0.2f);
+	glColor4f(_topColor.r, _topColor.g, _topColor.b, 0.3f);
 	glVertex2f(0, 1000);
 	glVertex2f(800, 1000);
-	glColor4f(_bottomColor.r, _bottomColor.g, _bottomColor.b, 0.2f);
+	glColor4f(_bottomColor.r, _bottomColor.g, _bottomColor.b, 0.3f);
 	glVertex2f(800, -200);
 	glVertex2f(0, -200);
 	glEnd();
@@ -64,7 +64,7 @@ void BackgroundManager::setColor(float lerpValue, glm::vec3 &color) {
 	}
 
 	int colorIndex = round(lerpValue * _fullColorGradient.size() - 1);
-	if (colorIndex == 0) {
+	if (colorIndex <= 0) {
 		colorIndex = 1;
 	}
 	lerpValue = lerpValue * _fullColorGradient.size() - colorIndex - 0.5f;

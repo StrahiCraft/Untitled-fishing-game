@@ -1,17 +1,5 @@
-﻿  ReelingIn.cpp
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
-          with
-          [
-              T=float
-          ]
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  BackgroundManager.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\BackgroundManager.h(25,2): warning C4091: 'static ': ignored on left of 'BackgroundManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\BackgroundManager.h(26,2): warning C4091: 'static ': ignored on left of 'BackgroundManager' when no variable is declared
+E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\BackgroundManager.cpp(66,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   GameTamplate.vcxproj -> E:\Fakultet\2. Godina\CS232\CS232-Projekat\Debug\GameTamplate.exe

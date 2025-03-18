@@ -1,8 +1,10 @@
+#pragma once
 #include "GameState.h"
 #include "ProgressBar.h"
 #include "Ring.h"
 #include "ChaosControl.h"
 #include "Hitbox.h"
+#include "BackgroundManager.h"
 class Fishing :
     public GameState
 {
