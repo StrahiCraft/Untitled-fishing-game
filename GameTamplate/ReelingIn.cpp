@@ -71,12 +71,14 @@ void ReelingIn::onStateUpdate()
 	_reelInScore += Time::getDeltaTime();
 	if (_player->getVelocityMagnitude() == 0) {
 		_lineIntegrity += Time::getDeltaTime() * _lineIntegrityDecaySpeed * ((_player->getPosition().y + 100) / 500);
+		_progressBar->changeColor(glm::vec3(0.5f, 1, 0.5f));
 		if (_lineIntegrity > _progressBar->getMaxProgress()) {
 			_lineIntegrity = _progressBar->getMaxProgress();
 		}
 	}
 	else {
 		_lineIntegrity -= _player->getVelocityMagnitude() * Time::getDeltaTime() * _lineIntegrityDecaySpeed / ((_player->getPosition().y + 100) / 400);
+		_progressBar->changeColor(glm::mix(glm::vec3(0.5f, 0, 0), glm::vec3(1), _lineIntegrity));
 	}
 
 	_progressBar->setProgress(_lineIntegrity);
