@@ -158,6 +158,9 @@ void ReelingIn::checkForBombCollision() {
 		if (glm::distance(_player->getPosition(), bomb->getPosition()) <= 45) {
 			AudioManager::playSound("explode");
 			_progressBar->setMaxProgress(_progressBar->getMaxProgress() - 0.2f);
+			if (_lineIntegrity > _progressBar->getMaxProgress()) {
+				_lineIntegrity = _progressBar->getMaxProgress();
+			}
 			bomb->resetBomb();
 		}
 	}

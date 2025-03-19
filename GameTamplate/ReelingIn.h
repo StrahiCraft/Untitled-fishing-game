@@ -33,4 +33,3 @@ private:
     void checkForBombCollision();
     void resetPickup();
 };
-

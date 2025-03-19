@@ -16,6 +16,7 @@ private:
 	/// Value that represents the lerped distance between the top and bottom colors
 	/// </summary>
 	static float _distanceBetweenColors;
+	static float _overlayTransparency;
 public:
 	static void init();
 	static void setBackground(float lerpValue);
@@ -24,4 +25,3 @@ public:
 private:
 	static void setColor(float lerpValue, glm::vec3 &color);
 };
-

@@ -4,9 +4,11 @@ vector<glm::vec3> BackgroundManager::_fullColorGradient;
 glm::vec3 BackgroundManager::_topColor;
 glm::vec3 BackgroundManager::_bottomColor;
 float BackgroundManager::_distanceBetweenColors;
+float BackgroundManager::_overlayTransparency;
 
 void BackgroundManager::init() {
 	_distanceBetweenColors = 0.2f;
+	_overlayTransparency = 0.3f;
 
 	_fullColorGradient.push_back(glm::vec3(9.0f / 255.0f, 4.0f / 255.0f, 87.0f / 255.0f));
 	_fullColorGradient.push_back(glm::vec3(56.0f / 255.0f, 56.0f / 255.0f, 194.0f / 255.0f));
@@ -43,10 +45,10 @@ void BackgroundManager::renderOverlay() {
 	glEnable(GL_BLEND);
 
 	glBegin(GL_QUADS);
-	glColor4f(_topColor.r, _topColor.g, _topColor.b, 0.3f);
+	glColor4f(_topColor.r, _topColor.g, _topColor.b, _overlayTransparency);
 	glVertex2f(0, 1000);
 	glVertex2f(800, 1000);
-	glColor4f(_bottomColor.r, _bottomColor.g, _bottomColor.b, 0.3f);
+	glColor4f(_bottomColor.r, _bottomColor.g, _bottomColor.b, _overlayTransparency);
 	glVertex2f(800, -200);
 	glVertex2f(0, -200);
 	glEnd();
