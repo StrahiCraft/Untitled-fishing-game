@@ -55,6 +55,8 @@ void ReelingIn::onStateUpdate()
 		return;
 	}
 
+	BackgroundManager::update();
+
 	if (!_pickup->getActive()) {
 		resetPickup();
 	}
@@ -66,6 +68,11 @@ void ReelingIn::onStateUpdate()
 
 	if (_progressBar->getMaxProgress() <= 0) {
 		EventSystem::invokeChannel("GameOver");
+		return;
+	}
+
+	if (_lineIntegrity <= 0) {
+		EventSystem::invokeChannel("OnLineBreak");
 		return;
 	}
 
@@ -105,9 +112,6 @@ void ReelingIn::onStateUpdate()
 		_bombs[i]->update();
 	}
 
-	if (_lineIntegrity <= 0) {
-		EventSystem::invokeChannel("OnLineBreak");
-	}
 }
 
 void ReelingIn::render()
@@ -158,8 +162,18 @@ void ReelingIn::checkForBombCollision() {
 		if (glm::distance(_player->getPosition(), bomb->getPosition()) <= 45) {
 			AudioManager::playSound("explode");
 			_progressBar->setMaxProgress(_progressBar->getMaxProgress() - 0.2f);
+
+			if (_progressBar->getMaxProgress() <= 0) {
+				EventSystem::invokeChannel("GameOver");
+				return;
+			}
+
 			if (_lineIntegrity > _progressBar->getMaxProgress()) {
 				_lineIntegrity = _progressBar->getMaxProgress();
+			}
+			if (_lineIntegrity >= 0.2f) {
+				_lineIntegrity -= 0.1f;
+				_progressBar->decayProgressBar(0.1f);
 			}
 			bomb->resetBomb();
 		}

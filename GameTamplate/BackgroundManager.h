@@ -3,7 +3,7 @@
 #include <glm.hpp>
 #include <vector>
 #include <iostream>
-#include "Time.h"
+#include "Bubble.h"
 
 using namespace std;
 
@@ -17,9 +17,11 @@ private:
 	/// </summary>
 	static float _distanceBetweenColors;
 	static float _overlayTransparency;
+	static vector<Bubble*> _bubbles;
 public:
 	static void init();
 	static void setBackground(float lerpValue);
+	static void update();
 	static void render();
 	static void renderOverlay();
 private:

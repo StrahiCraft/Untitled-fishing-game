@@ -5,6 +5,7 @@ glm::vec3 BackgroundManager::_topColor;
 glm::vec3 BackgroundManager::_bottomColor;
 float BackgroundManager::_distanceBetweenColors;
 float BackgroundManager::_overlayTransparency;
+vector<Bubble*> BackgroundManager::_bubbles;
 
 void BackgroundManager::init() {
 	_distanceBetweenColors = 0.2f;
@@ -17,6 +18,10 @@ void BackgroundManager::init() {
 
 	_topColor = _fullColorGradient[_fullColorGradient.size() - 1];
 	_bottomColor = _fullColorGradient[0];
+
+	for (int i = 0; i < 30; i++) {
+		_bubbles.push_back(new Bubble());
+	}
 } 
 
 /// <summary>
@@ -37,6 +42,10 @@ void BackgroundManager::render() {
 	glVertex2f(800, 0);
 	glVertex2f(0, 0);
 	glEnd();
+
+	for (Bubble* bubble : _bubbles) {
+		bubble->render();
+	}
 }
 
 void BackgroundManager::renderOverlay() {
@@ -55,6 +64,12 @@ void BackgroundManager::renderOverlay() {
 
 	glDisable(GL_BLEND);
 	glEnable(GL_TEXTURE_2D);
+}
+
+void BackgroundManager::update() {
+	for (Bubble* bubble : _bubbles) {
+		bubble->update();
+	}
 }
 
 void BackgroundManager::setColor(float lerpValue, glm::vec3 &color) {

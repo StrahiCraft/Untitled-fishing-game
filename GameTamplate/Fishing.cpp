@@ -55,6 +55,8 @@ void Fishing::onStateUpdate() {
 		return;
 	}
 
+	BackgroundManager::update();
+
 	if (!_pickup->getActive()) {
 		resetPickup();
 	}

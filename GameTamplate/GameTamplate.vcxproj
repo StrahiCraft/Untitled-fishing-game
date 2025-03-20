@@ -216,6 +216,7 @@
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="BackgroundManager.cpp" />
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="Bubble.cpp" />
     <ClCompile Include="BurstStream.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ChaosControl.cpp" />
@@ -248,6 +249,7 @@
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BackgroundManager.h" />
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="Bubble.h" />
     <ClInclude Include="BurstStream.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ChaosControl.h" />
