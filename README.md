@@ -25,13 +25,18 @@ U ovoj staticnoj klasi se desava sve vezano za score. Cuva trenutan score i najb
 Posto sam odlucio da ne koristim ugradjen text renderer iz gluta, napravio sam svoj. Moj text renderer koristi sprite font i u sustini cuva vektor sprite-ova koji su svi offsetovani (svaki karakter je jedan sprite). Jedine funkcije ove klase su za setovanje teksta i za njegovo renderovanje.
 <h3><a href="GameTamplate/Time.cpp">Time</a></h3>
 Staticna klasa za stvari koje imaju veze sa vremenom, u sustini ona sluzi da mi daje nacin da skaliram delta time i da imam real time koji nije skaliran. Ova klasa postoji posto sam hteo da imam <a href="GameTamplate/ChaosControl.cpp">pickup koji zaustavlja vreme</a>.
+<h3><a href="GameTamplate/BackgroundManager.cpp">Background Manager</a></h3>
+Staticna klasa za rad sa pozadinom igrice. Boja pozadine se racuna pomocu custom lerp funkcije i gradijenta koji je definisan u kodu. Funkcija za racunanje boje radi tako sto joj damo odredjenu lerp vrednost (vrednost od 0 do 1) i ta vrednost je prebacena u novu vrednost (koja je isto izmedju 0 i 1) koja se koristi da bi se izracunala boja u tacci t izmedju tacke a i b, gde su a i b dve boje na gradijentu, a t boja izmedju njih.<br>
+Ova klasa je takodje zaduzena za cuvanje i pomeranje <a href="GameTamplate/Bubble.cpp">mehura</a>.
 <h2>Game Object klase</h2>
 <h3>Pickup-ovi</h3>
-U igrici postoje 2 pickup-a i oba nasledjuju klasu <a href="GameTamplate/Pickup.cpp">Pickup.cpp</a>, pickup klasa nasledjuje <a href="GameTamplate/GameObject.h">GameObject</a> klasu koju smo dobili za projekat. Pickup klasa ima funkcije za update i renderovanje koje dolaze iz game object-a, dodatne funkcije su mu za dobijanje njegove velicine, virtuelna funkcija koja se poziva kada igrac pokupi pickup i svaka klasa koja nasledjuje ovu mora da definise sta se desi i funkcija za pomeranje pickup-a. Pickup uvek ide sa desna na levo, ali i ova funkcija moze da se predefinise kako bi se drugacije pomerao pickup.
+U igrici postoje 3 pickup-a i svi nasledjuju klasu <a href="GameTamplate/Pickup.cpp">Pickup.cpp</a>, pickup klasa nasledjuje <a href="GameTamplate/GameObject.h">GameObject</a> klasu koju smo dobili za projekat. Pickup klasa ima funkcije za update i renderovanje koje dolaze iz game object-a, dodatne funkcije su mu za dobijanje njegove velicine, virtuelna funkcija koja se poziva kada igrac pokupi pickup i svaka klasa koja nasledjuje ovu mora da definise sta se desi i funkcija za pomeranje pickup-a. Pickup uvek ide sa desna na levo, ali i ova funkcija moze da se predefinise kako bi se drugacije pomerao pickup.
 <h4><a href="GameTamplate/Ring.cpp">Ring.cpp</a></h4>
-Ovaj pickup je manje vise ista stvar kao prstenje iz Sonic igrica (cak je i spritesheet iz jedne), prsten povecava igracev score za 1 kada je pokupljen.
+Ovaj pickup je manje vise ista stvar kao prstenje iz Sonic igrica (cak je i spritesheet iz jedne), prsten povecava igracev score za zadat broj kada je pokupljen, taj broj je 1 po default-u.
 <h4><a href="GameTamplate/ChaosControl.cpp">ChaosControl.cpp</a></h4>
 Radjeno po moci od Shadow The Hedgehoga, ovaj pickup zaustavlja vreme na 5 sekundi i stvara zeleni overlay. (Za ovo mi je trebala <a href="GameTamplate/Time.cpp">time</a> klasa).
+<h4><a href="GameTamplate/BurstStream"></a>BurstStream.cpp</h4>
+Radjeno po napadu od legendarne karte "Blue Eyes White Dragon", ovaj pickup se stvara u fazi "<a href="GameTamplate/ReelingIn.cpp">Reeling in</a>" i kada je pokupljen unistava sve bombe dok laser prolazi po ekranu.
 <h3>UI elementi</h3>
 Ovde idu game object-i koji su UI elementi, ovde je verovatno mogao da bude svrstan i <a href="GameTamplate/TextRenderer.cpp">text renderer</a> ali sam odlucio njega da svrstam u utility klasu.
 <h4><a href="GameTamplate/Button.cpp">Button</a></h4>
@@ -48,6 +53,8 @@ Objekti ove klase blokiraju put igracu i koristi se za kamenje koje se nasumicno
 Igrac se pomera na WASD i pokusava da upeca ribu, nakon sto je zakaci na udicu, igrac je usporen u zavisnosti od tezine ribe.
 <h2>Game State klase</h2>
 Game state klase u ovom projektu su klase koje koristim kao scene. Bazicna klasa, <a href="GameTamplate/GameState.cpp">GameState.cpp</a> sadrzi reference na igraca i ribu, kao i na sve dugmice koji se nalaze unitar tog stanja. Takodje je u svakom stanju moguce da se pauzira igrica, samo sto ako u nekom stanju zelimo da implementiramo pauzu, moramo da dodamo nacin da menjamo _paused bool.
+<h3><a href="GameTamplate/Bubble.cpp">Bubble</a></h3>
+Pozadinski element koji cini igricu da se oseca kao da je pod vodom, moze biti jedan od 7 mogucih sprite-ova.
 <h3>Stanja pecanja</h3>
 <h4><a href="GameTamplate/Fishing.cpp">Fishing.cpp</a></h4>
 Pocetno stanje igre (ne racunajuci main meni i tako to, vec kad zapocnemo nas pokusaj), u kom igrac pokusava da krene da peca ribu, u ovom stanju se stvaraju pickup-ovi i stva se kamenje koje blokira igraca.
