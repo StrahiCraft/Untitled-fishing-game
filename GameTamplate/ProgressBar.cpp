@@ -21,6 +21,7 @@ ProgressBar::ProgressBar(glm::vec2 position, glm::vec2 scale,
 void ProgressBar::update() {
 	if (_fastDecayTimer >= 1) {
 		_fastDecayTimer = 1;
+		_fastDecayProgress = 0;
 		return;
 	}
 
