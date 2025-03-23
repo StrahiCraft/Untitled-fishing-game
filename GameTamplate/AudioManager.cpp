@@ -11,7 +11,7 @@ void AudioManager::init() {
 	FMOD::System_Create(&_audioSystem);
 	result = _audioSystem->init(50, FMOD_INIT_NORMAL, NULL);
 
-	std::cout << result << std::endl;
+	debugResult(result);
 }
 
 void AudioManager::addSound(string sfxName, string sfxDirectory) {
