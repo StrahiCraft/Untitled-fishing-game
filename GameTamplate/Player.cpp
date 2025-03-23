@@ -59,16 +59,16 @@ void Player::setSpeedDebuff(float fishWeight) {
 }
 
 void Player::render() {
+	if (!_active) {
+		return;
+	}
+
 	glPushMatrix();
 
 	glTranslatef(_position.x, _position.y, 0.0f);
 	glRotatef(_rotation, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-28.0f, 0.0f, 0.0f);
 	glScalef(_scale.x * 2, _scale.y * 2, 1.0f);
-
-	if (!_active) {
-		return;
-	}
 
 	getSprite()->render();
 
@@ -80,6 +80,35 @@ void Player::render() {
 	glColor3f(1, 1, 1);
 	glVertex2f(400, 800);
 	glVertex2f(_position.x + 60 * -std::sin(_rotation / 57.2958f), _position.y + 60 * std::cos(_rotation / 57.2958f));
+	glEnd();
+}
+
+void Player::renderBroken(float brokenTimer) {
+	glPushMatrix();
+
+	glTranslatef(_position.x, _position.y - brokenTimer * 50, 0.0f);
+	glRotatef(_rotation, 0.0f, 0.0f, 1.0f);
+	glTranslatef(-28.0f, 0.0f, 0.0f);
+	glScalef(_scale.x * 2, _scale.y * 2, 1.0f);
+
+	getSprite()->render();
+
+	glPopMatrix();
+
+	glPushMatrix();
+
+	glBegin(GL_LINES);
+	glColor3f(1, 1, 1);
+	glVertex2f(400, 800);
+	glVertex2f((400 + _position.x + 60 * -std::sin(_rotation / 57.2958f)) / 2.0f + brokenTimer * 15,
+		(800 + _position.y - brokenTimer * 50 + 60 * std::cos(_rotation / 57.2958f)) / 2.0f);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glColor3f(1, 1, 1);
+	glVertex2f((400 + _position.x + 60 * -std::sin(_rotation / 57.2958f)) / 2.0f - brokenTimer * 15,
+		(800 + _position.y - brokenTimer * 50 + 60 * std::cos(_rotation / 57.2958f)) / 2.0f - brokenTimer * 30);
+	glVertex2f(_position.x + 60 * -std::sin(_rotation / 57.2958f), _position.y - brokenTimer * 50 + 60 * std::cos(_rotation / 57.2958f));
 	glEnd();
 }
 

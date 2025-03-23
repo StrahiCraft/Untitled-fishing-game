@@ -1,4 +1,4 @@
-﻿  ReelingIn.cpp
+﻿  Player.cpp
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(104,20): warning C4244: 'initializing': conversion from 'T' to 'GLuint', possible loss of data
           with
           [
@@ -11,12 +11,9 @@ E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Sprite.h(105,20): warnin
           ]
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\Time.h(14,2): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
 E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\EventSystem.h(19,2): warning C4091: 'static ': ignored on left of 'EventSystem' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\AudioManager.h(23,2): warning C4091: 'static ': ignored on left of 'AudioManager' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\ScoreManager.h(22,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
-E:\Fakultet\2. Godina\CS232\CS232-Projekat\GameTamplate\BackgroundManager.h(29,2): warning C4091: 'static ': ignored on left of 'BackgroundManager' when no variable is declared
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
   Generating code
-  0 of 1209 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 1211 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

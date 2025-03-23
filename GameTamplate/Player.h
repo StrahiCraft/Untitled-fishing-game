@@ -16,8 +16,9 @@ private:
 public:
     Player(const glm::vec2& pos, const glm::vec2& vel, Sprite* spr, float speed);
 
-    virtual void update();
-    virtual void render();
+    void update();
+    void render();
+    void renderBroken(float brokenTimer);
 
     void handleInput();
     void handleMovement();

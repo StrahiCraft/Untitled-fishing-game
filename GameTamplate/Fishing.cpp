@@ -27,6 +27,7 @@ void Fishing::onStateEnter() {
 	
 	_player->setActive(true);
 	_player->setRotation(0);
+	_player->setVelocity(glm::vec2(0));
 	_player->setPosition(glm::vec2(400, 400));
 	_player->setSpeedDebuff(0);
 	

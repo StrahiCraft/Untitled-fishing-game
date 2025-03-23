@@ -46,6 +46,19 @@ void ReelingIn::onStateEnter()
 
 void ReelingIn::onStateUpdate()
 {
+	if (_lineBroken) {
+		if (_lineBrokenTimer > 3) {
+			EventSystem::invokeChannel("OnLineBreak");
+			return;
+		}
+		_fish->setVelocity(glm::vec2(-200, -50));
+		_fish->getSprite()->setSpriteFlip(glm::vec2(0, 1));
+		_fish->setRotation(_fish->getVelocityAngle() + 90);
+		_fish->setPosition(_fish->getPosition() + _fish->getVelocity() * Time::getDeltaTime());
+		_lineBrokenTimer += Time::getDeltaTime();
+		return;
+	}
+
 	// 27 = escape
 	if (Input::getKeyDown(27)) {
 		togglePause();
@@ -72,7 +85,9 @@ void ReelingIn::onStateUpdate()
 	}
 
 	if (_lineIntegrity <= 0) {
-		EventSystem::invokeChannel("OnLineBreak");
+		_lineBroken = true;
+		AudioManager::stopMusic();
+		AudioManager::playSound("lineBreak");
 		return;
 	}
 
@@ -124,7 +139,12 @@ void ReelingIn::render()
 		_stoneSprites.getValue(i)->render();
 		glPopMatrix();
 	}
-	_player->render();
+	if (_lineBroken) {
+		_player->renderBroken(_lineBrokenTimer);
+	}
+	else {
+		_player->render();
+	}
 	_fish->render();
 
 	for (int i = 0; i < _bombCount; i++) {
@@ -135,8 +155,10 @@ void ReelingIn::render()
 
 	BackgroundManager::renderOverlay();
 
-	_progressBar->render();
-	ScoreManager::render();
+	if (!_lineBroken) {
+		_progressBar->render();
+		ScoreManager::render();
+	}
 
 	if (_paused) {
 		renderPauseMenu();

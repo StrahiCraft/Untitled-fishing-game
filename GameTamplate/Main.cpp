@@ -69,6 +69,7 @@ void setupAudio() {
 	AudioManager::addSound("ring", "Audio/ring.wav");
 	AudioManager::addSound("chaosControl", "Audio/chaosControl.wav");
 	AudioManager::addSound("BurstStream", "Audio/burstStream.wav");
+	AudioManager::addSound("lineBreak", "Audio/lineBreak.wav");
 }
 
 void changeGameState(GameState* newState) {
