@@ -20,7 +20,7 @@ void AudioManager::addSound(string sfxName, string sfxDirectory) {
 	result = _audioSystem->createSound(sfxDirectory.c_str(), FMOD_DEFAULT, 0, &newSound);
 	_soundEffects.addItem(sfxName, newSound);
 
-	std::cout << result << std::endl;
+	debugResult(result);
 }
 
 void AudioManager::playSound(string sfxName) {
