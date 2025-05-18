@@ -1,3 +1,5 @@
+<a href="https://strasko.itch.io/untitled-fishing-game">Download page</a>
+
 <h1>Dokumentacija</h1>
 <h2>Ideja igrice</h2>
 Ova igrica je zamisljena da bude pecaroska igrica u kojoj je cilj da igrac upeca sto vise riba je moguce kako bi osvojio najvisi score.
